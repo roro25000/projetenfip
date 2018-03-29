@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+//        phpinfo();
         require "entete.html";
         require "piedPage.html";
 
@@ -24,7 +25,7 @@ and open the template in the editor.
         $qry = $db->prepare("SELECT * FROM categories;");
         $qry->execute();
         //$noms = $qry->fetch();
-        print_r($noms);
+        //print_r($nom);
         echo '<p id="catégorie">';
         while($nom = $qry->fetch()){
             echo $nom['description'].'<br/>';
