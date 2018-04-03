@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Controlleur;
 
 //use Model\categorie as Categorie;
 use PDO;
@@ -23,6 +23,7 @@ class categorieControlleur {
         };
         echo '</p>';
         echo ' </div></p>';
+        
     }
     
     public function add(){

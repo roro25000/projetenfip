@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
     <head>
         <!-- Required meta tags -->
@@ -9,6 +8,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <title>Hello, world!</title>
+
     </head>
     <body>
         <h1>SCP VOLLEY</h1>
@@ -32,13 +32,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Boutique</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Espace Club</a>
                     </li>
-                    
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Choix equipe
@@ -50,15 +50,15 @@
                             <a class="dropdown-item" href="#">Equipe 3</a>
                         </div>
                     </li>
-                 </ul>
+                </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
-                
-                
-                
-                
+
+
+
+
             </div>
         </nav>
 

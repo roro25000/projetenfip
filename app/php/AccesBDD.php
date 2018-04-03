@@ -1,5 +1,4 @@
 <?php
-
 Class AccesBDD {
     static $DB;
     static function connectBDD() {
