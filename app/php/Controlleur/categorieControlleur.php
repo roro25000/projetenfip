@@ -15,6 +15,7 @@ class categorieControlleur {
     function getAll() {
         $qry = $this->db->prepare("SELECT * FROM categories;");
         $qry->execute();
+        echo "<div>";
         echo '<p id="catégorie">';
         while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)){
             $categ = new \Model\Categorie($donnees);
