@@ -2,7 +2,7 @@
 
 namespace Model;
 
-Class Categorie {
+Class Match {
 
     private $id_match;
     private $id_equipe_a;

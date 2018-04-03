@@ -2,7 +2,7 @@
 
 namespace Model;
 
-Class Salles {
+Class Salle {
 
     private $id_salle;
     private $nom;

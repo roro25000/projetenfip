@@ -2,12 +2,11 @@
 
 namespace Model;
 
-Class Creneaux {
+Class Championnat {
 
-    private $id_creneau;
-    private $id_salle;
-    private $debut;
-    private $fin;
+    private $id_championnats;
+    private $nom_championnat;
+
 
     
     // Un tableau de données doit être passé à la fonction (d'où le préfixe « array »).
@@ -24,39 +23,23 @@ Class Creneaux {
             }
         }
     }
-    function getId_creneau() {
-        return $this->id_creneau;
+    function getId_championnats() {
+        return $this->id_championnats;
     }
 
-    function getId_salle() {
-        return $this->id_salle;
+    function getNom_championnat() {
+        return $this->nom_championnat;
     }
 
-    function getDebut() {
-        return $this->debut;
+    function setId_championnats($id_championnats) {
+        $this->id_championnats = $id_championnats;
     }
 
-    function getFin() {
-        return $this->fin;
+    function setNom_championnat($nom_championnat) {
+        $this->nom_championnat = $nom_championnat;
     }
 
-    function setId_creneau($id_creneau) {
-        $this->id_creneau = $id_creneau;
-    }
-
-    function setId_salle($id_salle) {
-        $this->id_salle = $id_salle;
-    }
-
-    function setDebut($debut) {
-        $this->debut = $debut;
-    }
-
-    function setFin($fin) {
-        $this->fin = $fin;
-    }
-
-    
+        
     function __construct(array $donnees) {
         $this->hydrate($donnees);
     }

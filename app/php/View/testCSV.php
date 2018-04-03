@@ -61,7 +61,6 @@
 			echo "<td>$tab[14]</td>";
 			echo "</tr>";
 		}
-		
 	}
 	?>	
 	</table>
