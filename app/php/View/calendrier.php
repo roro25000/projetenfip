@@ -1,22 +1,19 @@
 <?php
-    namespace App;
-    // Afficher les erreurs à l'écran
-    ini_set('display_errors', 1);
-
-    require("entete.html");
-    require("../Autoloader.php");
-    Autoloader::register(); 
-    
-    use accesBDD;
-    $db = AccesBDD::connectBDD();
-    
-    require("../Controlleur/categorieControlleur.php");
-    $t = new categorieControlleur($db);
-    $t->getAll();
-    
-    
-    
-    require("piedPage.html");
+    require "entete.html";
 ?>
+<html>
+<head>
+<meta charset='utf-8' />
+<link href='../../../public/fullcalendar-3.9.0/fullcalendar.min.css' rel='stylesheet' />
+<link href='../../../public/fullcalendar-3.9.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='../../../public/fullcalendar-3.9.0/lib/moment.min.js'></script>
+<script src='../../../public/fullcalendar-3.9.0/lib/jquery.min.js'></script>
+<script src='../../../public/fullcalendar-3.9.0/fullcalendar.min.js'></script>
+  <script src='../../../public/fullcalendar-3.9.0/locale-all.js'></script>
+
+
+
+
+<?php  require "piedPage.html"; ?>
 
 
