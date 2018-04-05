@@ -4,22 +4,16 @@ require("../Autoloader.php");
 
 use App\Autoloader;
 use AccesBDD;
-use Controlleur\equipeControlleur;
 
+use Controlleur\calendrierControlleur;
 Autoloader::register();
 
 
 
-$db = AccesBDD::connectBDD();
-$t = new equipeControlleur($db);
-$te = $t->getAll();
-while ($donnees = $te->fetch(PDO::FETCH_ASSOC)) {
-   $categ = new \Model\Equipe($donnees);
-   echo '<p>' . $categ->getNom() . '</p>';
-};
+
+
 ?>
 
-<button type="button" class="btn btn-primary">Ajout Equipe</button>
 <link href='../../../public/fullcalendar-3.9.0/fullcalendar.min.css' rel='stylesheet' />
 <link href='../../../public/fullcalendar-3.9.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
 <script src='../../../public/fullcalendar-3.9.0/lib/moment.min.js'></script>
@@ -29,7 +23,52 @@ while ($donnees = $te->fetch(PDO::FETCH_ASSOC)) {
 
 
 
+<script>
+$(document).ready(function() {
 
-<?php require "piedPage.html"; ?>
+    $('#calendar').fullCalendar({
+     locale:'fr',
+     
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listWeek'
+      },
+      defaultDate: '01/01/2018',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow more link when too many events
+      events: [
+      
+      <?php  $db = AccesBDD::connectBDD();
+    $t = new calendrierControlleur($db);
+    $te = $t->getMatch();?>
+    ]});
+   })          
+</script>
+<br/>
+  <div id='calendar'></div>
+
+  
+  <style>
+
+  body {
+    margin: 40px 10px;
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+</style>
 
 
+ <div class="card-footer text-muted">
+    2 days ago
+</div> 
+</body>
+</html>
