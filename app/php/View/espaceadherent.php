@@ -21,18 +21,11 @@ $adherentCtrl->deconnexion();
 
 <?php
 if (isset($_SESSION['identifiant'])) {
-    echo '<h1>Vous êtes connecté !</h1>';
-    ?>
-    <form action="espaceadherent.php" method="POST">
-        <input type="hidden" value="deconnexion" name="deconnexion">
-        <button type="submit"class="btn btn-danger">Deconnexion</button>
-    </form>
-
-    <?php
+    echo '<h5>Vous êtes connecté en tant que : </5>'.$_SESSION['identifiant'];
+    require("siteAdherent/menu.php");
 } else {
     require("Form/connexionForm.php");
 }
 ?>
-
 
 <?php require "piedPage.php"; ?>

@@ -10,7 +10,6 @@
  
         <link rel="stylesheet" href="../../../public/bootstrap-4.0.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../public/css/stylevolley.css" type="text/css" media="screen" >
-
         <title>SCP VOLLEY</title>
 
     </head>
