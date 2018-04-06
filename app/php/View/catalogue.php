@@ -43,6 +43,6 @@ $te = $t->getAll();
 
     <?php }; ?>
 </div>
-<?php require "piedPage.html"; ?>
+<?php require "piedPage.php"; ?>
 
 

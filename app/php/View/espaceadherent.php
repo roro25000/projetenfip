@@ -47,4 +47,4 @@ $db = AccesBDD::connectBDD();
 </div>
 
 
-<?php require "piedPage.html"; ?>
+<?php require "piedPage.php"; ?>

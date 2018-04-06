@@ -2,7 +2,7 @@
 //test
 //        phpinfo();
 require "entete.php";
-require "piedPage.html";
+require "piedPage.php";
 ?>
 
 
