@@ -54,12 +54,7 @@ $(document).ready(function() {
   
   <style>
 
-  body {
-    margin: 40px 10px;
-    padding: 0;
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    font-size: 14px;
-  }
+
 
   #calendar {
     max-width: 900px;
@@ -67,19 +62,21 @@ $(document).ready(function() {
   }
 
 </style>
-<form action="/action_page.php">
+<form method="post" action="testCSV.php">
     
-    <select>
-        <?php 
+    <select name="equipe_id">
+    <?php 
     $eq = new equipeControlleur($db);
     $eqga = $eq->getAll();
     while ($donnees = $eqga->fetch(PDO::FETCH_ASSOC)) {
         $equipe = new \Model\Equipe($donnees);
     ?>
-        <option value=<?php echo $equipe->getId_equipe(); ?> > <?php echo $equipe->getNom() ; } ?></option>
+        <option value=<?php echo $equipe->getId_equipe(); ?> > 
+            <?php echo $equipe->getNom() ; } ?>
+        </option>
     </select>
 
-    <input type="file" accept=".csv" />
+    <input name="URLCSV" type="file" accept=".csv" />
     <input type="submit" >
     
     

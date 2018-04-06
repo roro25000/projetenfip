@@ -17,8 +17,8 @@ class equipeControlleur {
         return $qry;
     }
     
-    function getEquipeNome(){
-        $qry = $this->db->prepare("select nom, id_equipe from equipes;");
+    function getEquipeNom(){
+        $qry = $this->db->prepare("select nom, id_equipe from equipes order by id_equipe;");
         $qry->execute();
         return $qry;
     }
