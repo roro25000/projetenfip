@@ -74,24 +74,8 @@ class calendrierControlleur {
      
     }
     
-    function InsertionCreneau($debut,$fin,$salle){
-    //if($salle != )    
-        
-    $id_salle = "select id_salle from salles where nom like %".$salle.";";    
-    $sql = "insert into creneaux(debut,fin,id_salle) values( ".$debut.",".$fin.",".$id_salle.");";
-
-
-
         
         
-    }
-    function InsertionMatch()
-    {
-    $sql = "insert into matchs(id_match,id_creneau,id_equipe_a,nom_equipe_b) values ( 
-('4',select id_creneau from creneaux order by id_creneau DESC limit 1),(select id_equipe from equipes where nom ='M7 (Ecole de volley)'),'test_equipe')";
-
-    }
-    
         
     
     public function add() {
