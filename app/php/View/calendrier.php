@@ -4,6 +4,7 @@ require("../Autoloader.php");
 
 use App\Autoloader;
 use AccesBDD;
+use Controlleur\equipeControlleur;
 
 use Controlleur\calendrierControlleur;
 Autoloader::register();
@@ -67,9 +68,17 @@ $(document).ready(function() {
 
 </style>
 <form action="/action_page.php">
+    
     <select>
-        <option value="">
+        <?php 
+    $eq = new equipeControlleur($db);
+    $eqga = $eq->getAll();
+    while ($donnees = $eqga->fetch(PDO::FETCH_ASSOC)) {
+        $equipe = new \Model\Equipe($donnees);
+    ?>
+        <option value=<?php echo $equipe->getId_equipe(); ?> > <?php echo $equipe->getNom() ; } ?></option>
     </select>
+
     <input type="file" accept=".csv" />
     <input type="submit" >
     
