@@ -22,7 +22,7 @@ where id_article in (1);
 requetes SQL:
 
 recuperer le mot de passe d'un adhérent:
-	select login,habilitation,mdp from adherents where login= '$nom';
+	select login,habilitation,mdp from adherents where login= 'test';
 
 
 mod mdp:	
@@ -30,5 +30,75 @@ update adherents set mdp = '$mdp' where login = '$login';
 
 sup adherents:
 
-delete from adherents where login='test';
+
+delete from adherents,joue where login='test';
+
+
+-------------------------------------------------
+
+table match:
+
+d_a:
+
+insert into match(id_equipe_a) select id_equipe from equipes where nom ='$nom';
+
+id_creneau:
+
+score_a:
+insert into match(score_a) values 
+
+score_b:
+
+duree:
+
+nom equipe_b:
+
+
+
+
+
+table creneaux:
+id_salle:
+
+debut,fin:
+insert into creneaux(debut,fin) values concat(Col_date,Col_Heure),concat(Col_date,Col_Heure+2);
+
+
+table_salle:
+nom:
+insert into salles(nom) values col_nom_csv;
+adresse:
+pas obligatoire
+
+code_p
+pas obligatoire
+ville:
+pas obligatoire
+
+table arbitre:
+
+id_ad:
+
+id_match:
+
+
+
+
+--------------------------
+
+select categorie,id_categorie from categories order by "id_categorie" ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
