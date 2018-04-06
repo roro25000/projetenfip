@@ -10,6 +10,7 @@
  
         <link rel="stylesheet" href="../../../public/bootstrap-4.0.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../public/css/stylevolley.css" type="text/css" media="screen" >
+
         <title>SCP VOLLEY</title>
 
     </head>
@@ -49,19 +50,14 @@
                     </li>
                     <?php
                     } else {
-                    echo '<li class="nav-item">
-                        <a class="nav-link" align="right" href="espaceadherent.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="ion-person active" data-pack="default" data-tags="users, staff, head, human"></span> Connexion</a>
-                    </li>';
+                    echo '</ul><ul class="nav navbar-nav navbar-right">
+                              <li>
+                                <a class="nav-link" href="espaceadherent.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="ion-person active" data-pack="default" data-tags="users, staff, head, human"></span> Connexion</a>
+                              </li>
+                          </ul>';
                     }
                     ?>
-
-
-
-                </ul>
-
-
-
-
+                
 
             </div>
         </nav>
