@@ -3,6 +3,8 @@
 <body>
 
 <table border="2">
+    
+    <?php echo "public/ressources/csv/".$_POST['URLCSV']; ?>
 		<tr>
 			<th>ENTITE</th>
 			<th>JOURNEE</th>
@@ -23,7 +25,7 @@
 		</tr>
 	
 	<?php
-	$loc = $_POST['equipe_id'];//"../../../public/ressources/csv/ffvb_calendrier.csv";
+	$loc = "/../../../public/ressources/csv/".$_POST['URLCSV'];//../../../public/ressources/csv/ffvb_calendrier.csv";
 	$fd = fopen("$loc","r"); 
 	$tab = array();
 	//$tab = list($user, $pass, $uid, $gid, $gecos, $home, $shell)
