@@ -40,18 +40,21 @@ table match:
 
 d_a:
 
-insert into match(id_equipe_a) select id_equipe from equipes where nom ='$nom';
+insert into matchs(id_equipe_a) select id_equipe from equipes where nom ='$nom';
 
 id_creneau:
+insert into matchs(id_creneau,id_equipe_a,nom_equipe_b) values ( 
+(select id_creneau from creneaux order by id_creneau DESC limit 1),(select id_equipe from equipes where nom ='M7 (Ecole de volley)'),'test_equipe');
 
 score_a:
-insert into match(score_a) values 
+insert into matchs(score_a) values 
 
 score_b:
 
 duree:
 
 nom equipe_b:
+insert into matchs(nom_equipe_b) values '$equipeB';
 
 
 
@@ -61,12 +64,27 @@ table creneaux:
 id_salle:
 
 debut,fin:
-insert into creneaux(debut,fin) values concat(Col_date,Col_Heure),concat(Col_date,Col_Heure+2);
+insert into creneaux(debut,fin,id_salle) values (concat(Col_date,Col_Heure),concat(Col_date,Col_Heure+2),(select id_salle from salles order by id_salle desc limit1));
+
+--------------Fonctionnent--------
+insert into salles(nom) values ('test');
+
+insert into creneaux(debut,fin,id_salle) values( current_timestamp,current_timestamp,(select id_salle from salles order by id_salle desc limit 1));
+
+insert into matchs(id_creneau,id_equipe_a,nom_equipe_b) values ( 
+(select id_creneau from creneaux order by id_creneau DESC limit 1),(select id_equipe from equipes where nom ='M7 (Ecole de volley)'),'test_equipe');
+
+-----------------------------------
+id equipe
+id entraineur
+id creneau
+
+insert into entrainements(id_equipe,id_entraineur,id_creneau) values('22','1','14');
 
 
 table_salle:
 nom:
-insert into salles(nom) values col_nom_csv;
+insert into salles(nom) values ('test');
 adresse:
 pas obligatoire
 
@@ -91,7 +109,7 @@ select nom, id_equipe from equipes;
 
 
 
-
+https://bimestriel.framapad.org/p/scp_volley_enfip31
 
 
 
