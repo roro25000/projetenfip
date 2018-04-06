@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href='custom.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
