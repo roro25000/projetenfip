@@ -87,6 +87,7 @@ id_match:
 --------------------------
 
 select categorie,id_categorie from categories order by "id_categorie" ;
+select nom, id_equipe from equipes;
 
 
 
