@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <script src="../../../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../../../bootstrap-4.0.0/dist/css/bootstrap.min.css">
+        <script src="../../../public/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../../public/bootstrap-4.0.0/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../../../public/css/stylevolley.css" type="text/css" media="screen" >
 
         <title>SCP VOLLEY</title>
