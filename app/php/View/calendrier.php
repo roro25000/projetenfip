@@ -66,7 +66,15 @@ $(document).ready(function() {
   }
 
 </style>
-
+<form action="/action_page.php">
+    <select>
+        <option value="">
+    </select>
+    <input type="file" accept=".csv" />
+    <input type="submit" >
+    
+    
+</form>
 
  <div class="card-footer text-muted">
     2 days ago

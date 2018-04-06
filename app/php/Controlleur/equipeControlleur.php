@@ -16,6 +16,12 @@ class equipeControlleur {
         $qry->execute();
         return $qry;
     }
+    
+    function getEquipeNome(){
+        $qry = $this->db->prepare("select nom, id_equipe from equipes;");
+        $qry->execute();
+        return $qry;
+    }
 
     public function add() {
         
