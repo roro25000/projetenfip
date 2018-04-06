@@ -34,7 +34,8 @@ $(document).ready(function() {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listWeek'
       },
-      defaultDate: '01/01/2018',
+      defaultDate:  <?php  $today = date('m/j/y');
+                            echo "'$today'";?>,
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow more link when too many events

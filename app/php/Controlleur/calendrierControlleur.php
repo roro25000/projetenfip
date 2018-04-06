@@ -59,7 +59,25 @@ class calendrierControlleur {
         },";
         };
     }
-
+    
+        function getMatch2() {
+        $sql = ' select id_creneau,debut, fin, salles.nom as "salle",'
+                . ' eq.nom as "equipe", '
+                . 'nom_equipe_b as "adversaire" '
+                . 'from creneaux join salles using(id_salle) '
+                . 'join matchs ma using(id_creneau) '
+                . 'join equipes eq on ma.id_equipe_a=eq.id_equipe';
+        
+            $qry = $this->db->prepare($sql);
+        $qry->execute();
+        
+     
+    }
+    
+        
+        
+        
+    
     public function add() {
         
     }
