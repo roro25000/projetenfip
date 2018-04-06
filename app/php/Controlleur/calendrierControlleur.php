@@ -75,7 +75,7 @@ class calendrierControlleur {
     }
     
     function InsertionCreneau($debut,$fin,$salle){
-    if($salle != )    
+    //if($salle != )    
         
     $id_salle = "select id_salle from salles where nom like %".$salle.";";    
     $sql = "insert into creneaux(debut,fin,id_salle) values( ".$debut.",".$fin.",".$id_salle.");";
