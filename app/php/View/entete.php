@@ -51,7 +51,7 @@
                     <?php
                     } else {
                     echo '<li class="nav-item">
-                        <a class="nav-link" align="right" href="espaceadherent.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Connexion</a>
+                        <a class="nav-link" align="right" href="espaceadherent.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="ion-person active" data-pack="default" data-tags="users, staff, head, human"></span> Connexion</a>
                     </li>';
                     }
                     ?>
