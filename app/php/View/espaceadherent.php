@@ -1,50 +1,38 @@
 <?php
+
 require("entete.php");
 require("../Autoloader.php");
 
 use App\Autoloader;
 use AccesBDD;
+use Controlleur\adherentControlleur;
 
 Autoloader::register();
 $db = AccesBDD::connectBDD();
+$adherentCtrl = new adherentControlleur($db);
+$adherentCtrl->connexion();
+$adherentCtrl->deconnexion();
+
 ?>
 
 
 
 <br />
-<div class="row justify-content-center">
 
-    <div class="col-sm-7">
-        <div class="card text-center">
-            <div class="card-header">
-                <h3>Connexion</h3>
-            </div>
-            <div class="card-body">
-                <p class="card-text">
-                <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                mot de passe oublié ? 
-            </div>
-        </div>
-    </div>
+<?php
+if (isset($_SESSION['identifiant'])) {
+    echo '<h1>Vous êtes connecté !</h1>';
+    ?>
+    <form action="espaceadherent.php" method="POST">
+        <input type="hidden" value="deconnexion" name="deconnexion">
+        <button type="submit"class="btn btn-danger">Deconnexion</button>
+    </form>
 
-</div>
+    <?php
+} else {
+    require("Form/connexionForm.php");
+}
+?>
 
 
 <?php require "piedPage.php"; ?>

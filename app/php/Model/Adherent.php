@@ -19,7 +19,6 @@ Class Adherent {
     private $arbitre;
     private $entraineur;
 
-
     // Un tableau de données doit être passé à la fonction (d'où le préfixe « array »).
 
     public function hydrate(array $donnees) {
@@ -34,6 +33,7 @@ Class Adherent {
             }
         }
     }
+
     function getId_adherent() {
         return $this->id_adherent;
     }
@@ -146,9 +146,7 @@ Class Adherent {
         $this->entraineur = $entraineur;
     }
 
-    
-    
-        function __construct(array $donnees) {
+    function __construct(array $donnees) {
         $this->hydrate($donnees);
     }
 

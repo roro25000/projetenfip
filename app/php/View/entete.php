@@ -12,6 +12,9 @@
 
     </head>
     <body>
+        <?php
+        session_start();
+        ?>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img src="../../../public/img/equipe/logo scp volley.jpg" width="50" height="50"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,14 +36,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="partenaires.php">Partenaires</a>
                     </li>
-
-                   
+                    <?php
+                    if (isset($_SESSION['identifiant'])) {
+                    ?>    
                     <li class="nav-item">
+                        <form id="deconnexionForm" action="espaceadherent.php" method="POST">
+                            <input type="hidden" value="deconnexion" name="deconnexion">
+                            <a class="nav-link" align="right" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:{}" onclick="document.getElementById('deconnexionForm').submit();"><span class="glyphicon glyphicon-user"></span> Deconnexion</a>
+                        </form>
+                    </li>
+                    <?php
+                    } else {
+                    echo '<li class="nav-item">
                         <a class="nav-link" align="right" href="espaceadherent.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Connexion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" align="right" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a>
-                    </li>
+                    </li>';
+                    }
+                    ?>
+
+
+
                 </ul>
 
 
