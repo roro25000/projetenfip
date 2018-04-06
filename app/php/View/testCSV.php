@@ -23,7 +23,7 @@
 		</tr>
 	
 	<?php
-	$loc = "ffvb_calendrier.csv";
+	$loc = "../../../public/ressources/csv/ffvb_calendrier.csv";
 	$fd = fopen("$loc","r"); 
 	$tab = array();
 	//$tab = list($user, $pass, $uid, $gid, $gecos, $home, $shell)
