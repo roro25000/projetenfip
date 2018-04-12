@@ -96,10 +96,11 @@ select nom, id_equipe from equipes;
 
 
 
+vcdgbf
 
 
 
 
 
 
-
+select equipes.nom,id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;
