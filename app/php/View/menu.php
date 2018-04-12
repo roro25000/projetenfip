@@ -4,7 +4,7 @@
         z-index: 1;
         top: 20px;
         left: 10px;
-        background: #D3D3D3;
+        background: #f8f9fa;
         overflow-x: hidden;
         padding: 8px 0;
     }
@@ -18,7 +18,7 @@
     }
 
     .sidenav a:hover {
-        color: #064579;
+        color: #2196F3;
     }
 
     .main {
@@ -30,9 +30,9 @@
 <div class="row">
 <!-- Side navigation -->
 <div class="sidenav col-sm-3">
-    <a class="nav-link" href="gestionAdherent.php">Gerer les adhérents</a>
-    <a href="gestionMatch.php">Gerer les matchs</a>
-    <a href="#clients">Gerer les equipes</a>
+    <a class="nav-link" href="gestionAdherent.php">Les adhérents</a>
+    <a href="gestionMatch.php">Les matchs</a>
+    <a href="gestionEquipe.php">Les equipes</a>
     <a href="#contact">Contact</a>
 </div>
 

@@ -92,11 +92,40 @@ select nom, id_equipe from equipes;
 
 
 
+peut gerer les equipes, gerer les matchs/entrainements ,salles, changer son mdp, gerer calendrier
 
+habilitation=3
+peut changer son mdp, acces direct a son calendrier, acces aux salles sans pouvoir les modifier, consulter les actualités de l'équipe
+Les informations indispensables à avoir sont :
+• numéro de licence
+• nom
+• prénom
+• date de naissance
+• email (plusieurs possibles)
+afficher les mail: depuis id_adherents (ex:2)
+select courriel from courriels,contacts where contacts.id_contact=courriels.id_contact and contacts.id_adherent='2';
 
+• téléphone (plusieurs possibles)
 
+select telephone from telephones,contacts where contacts.id_contact=telephones.id_contact and contacts.id_adherent='2';
 
-vcdgbf
+• catégorie (des joueurs peuvent évoluer dans une catégorie au-dessus de celle de
+leur tranche d'âge, surclassement simple, double ou triple possible)
+
+• surclassement simple, double ou triple (tous les joueurs ont au moins un
+surclassement simple, indiquer ceux qui disposent d'un niveau de surclassement
+supérieur)
+
+• arbitre (oui ou non)
+• entraîneur - si oui quelle(s) équipe(s)
+• dirigeant – si oui quelle fonction parmi Président, secrétaire, référent arbitre, référent
+entraîneur (voire possibilité d'en ajouter)
+
+Des critères de recherche doivent permettre d'obtenir des listes :
+• des joueurs lorsqu'il manque du monde sur une équipe : tout joueur de la même
+catégorie ou plus jeune, en fonction des surclassements de chacun
+• des arbitres disponibles sur un week-end, créneau donné
+• des entraîneurs disponibles sur un week-end, créneau donné
 
 
 
@@ -104,3 +133,17 @@ vcdgbf
 
 
 select equipes.nom,id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;
+select equipes.nom,id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;
+requetes :
+select equipes.nom,
+id_match,
+id_equipe_a,
+matchs.id_creneau,
+score_a,
+score_b,
+duree,
+nom_equipe_b,
+id_championnat,
+creneaux.debut
+from matchs,equipes,creneaux where equipes.id_equipe=id_equipe_a and creneaux.id_creneau = matchs.id_creneau
+order by creneaux.debut DESC;
