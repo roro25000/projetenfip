@@ -30,6 +30,12 @@ class calendrierControlleur {
         return $string;
     }
 
+        function EBizzare($string) {//change une apostrophe vers un backslash une appostrophe pour les variables de sessions
+        $string = preg_replace("~�~", "E", $string);
+        return $string;
+    }
+
+    
     function getAll() {
         //     $qry = $this->db->prepare("SELECT * FROM categories;");
         //     $qry->execute();
@@ -74,6 +80,35 @@ class calendrierControlleur {
      
     }
     
+    function InsertionCreneau($debut,$fin,$salle){
+    
+    
+    $sql = "insert into creneaux(debut,fin,id_salle) values( '".$debut."','".$fin."','".$this->getSalle($salle)."');";
+    echo $sql;
+     $qry = $this->db->prepare($sql);
+     $qry->execute();
+     
+    
+    }
+    
+    
+    
+    
+    
+
+    function getSalle($salle){
+        $salle= $this->EBizzare($salle);
+        $salle= strtoupper($salle);
+        if($salle == "MONASTIE"){
+            $id_salle=2;
+       
+        }elseif ($salle == "RIVIERE") {
+            $id_salle=1;
+        }else{
+            $id_salle=3;
+        }
+         return $id_salle;
+    }
         
         
         

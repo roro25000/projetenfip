@@ -62,6 +62,11 @@ $(document).ready(function() {
   }
 
 </style>
+
+<?php echo $t->getSalle("RIVI�RE") ?>
+<?php echo $t->getSalle("MONASTI�") ?>
+<?php echo $t->getSalle("LOLE") ?>
+
 <form method="post" action="testCSV.php">
     
     <select name="equipe_id">
@@ -82,8 +87,8 @@ $(document).ready(function() {
     
 </form>
 
+
  <div class="card-footer text-muted">
-    2 days ago
 </div> 
 </body>
 </html>

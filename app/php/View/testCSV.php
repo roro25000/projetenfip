@@ -1,3 +1,20 @@
+<?php
+require("entete.php");
+require("../Autoloader.php");
+
+use App\Autoloader;
+use AccesBDD;
+use Controlleur\equipeControlleur;
+
+use Controlleur\calendrierControlleur;
+Autoloader::register();
+
+
+
+
+
+?>
+
 
 
 <body>
@@ -26,6 +43,14 @@
 	
 	<?php
 	$loc = "../../../public/ressources/csv/ffvb_calendrier.csv";
+        
+
+$tabFich = file($loc);
+
+$nbLignes = count($tabFich);
+
+echo 'le fichier fait '.$nbLignes.' ligne(s).';
+
 	$fd = fopen("$loc","r"); 
 	$tab = array();
 	//$tab = list($user, $pass, $uid, $gid, $gecos, $home, $shell)
@@ -42,9 +67,12 @@
 		}
 		
 		asort($tab2);
-		foreach ($tab2 as $str)
+	//	foreach ($tab2 as $str)
+        for($i=1;$i<$nbLignes;$i++)
 		{
-			$tab = explode(';',$str);
+                   $db = AccesBDD::connectBDD();
+                   $str=$tab2[$i];         
+                    $tab = explode(';',$str);
 			echo "<tr>";
 			echo "<td>$tab[0]</td>";
 			echo "<td>$tab[1]</td>";
@@ -62,9 +90,17 @@
 			echo "<td>$tab[13]</td>";
 			echo "<td>$tab[14]</td>";
 			echo "</tr>";
+                   	$t = new calendrierControlleur($db);    
+                   $te = $t->InsertionCreneau($tab[3]." ".$tab[4],$tab[3] ." 18:00",$tab[12]); 
+                    
+
 		}
+         
 	}
-            ?>	
+            ?>
+             
+                
 	</table>
 </body>
+
 </html> 
