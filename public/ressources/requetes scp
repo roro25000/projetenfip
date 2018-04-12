@@ -105,11 +105,17 @@ peut changer son mdp, acces direct a son calendrier, acces aux salles sans pouvo
 
 
 
-vcdgbf
-
-
-
-
-
-
 select equipes.nom,id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;
+requetes:
+select equipes.nom,
+id_match,
+id_equipe_a,
+matchs.id_creneau,
+score_a,
+score_b,
+duree,
+nom_equipe_b,
+id_championnat,
+creneaux.debut
+from matchs,equipes,creneaux where equipes.id_equipe=id_equipe_a and creneaux.id_creneau = matchs.id_creneau
+order by creneaux.debut DESC;
