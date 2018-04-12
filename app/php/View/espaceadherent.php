@@ -5,11 +5,11 @@ require("../Autoloader.php");
 
 use App\Autoloader;
 use AccesBDD;
-use Controlleur\adherentControlleur;
+use Controlleur\AdherentControlleur;
 
 Autoloader::register();
 $db = AccesBDD::connectBDD();
-$adherentCtrl = new adherentControlleur($db);
+$adherentCtrl = new AdherentControlleur($db);
 $adherentCtrl->connexion();
 $adherentCtrl->deconnexion();
 
@@ -21,8 +21,7 @@ $adherentCtrl->deconnexion();
 
 <?php
 if (isset($_SESSION['identifiant'])) {
-    echo '<h5>Vous êtes connecté en tant que : </5>'.$_SESSION['identifiant'];
-    require("siteAdherent/menu.php");
+    require("menu.php");
 } else {
     require("Form/connexionForm.php");
 }

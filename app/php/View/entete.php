@@ -41,13 +41,18 @@
                     </li>
                     <?php
                     if (isset($_SESSION['identifiant'])) {
-                    ?>    
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="espaceadherent.php">Administration</a>
+                    </li>
+                    </ul><ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
                         <form id="deconnexionForm" action="espaceadherent.php" method="POST">
                             <input type="hidden" value="deconnexion" name="deconnexion">
                             <a class="nav-link" align="right" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:{}" onclick="document.getElementById('deconnexionForm').submit();"><span class="glyphicon glyphicon-user"></span> Deconnexion</a>
                         </form>
                     </li>
+                    </ul>
                     <?php
                     } else {
                     echo '</ul><ul class="nav navbar-nav navbar-right">

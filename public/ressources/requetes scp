@@ -89,18 +89,9 @@ id_match:
 select categorie,id_categorie from categories order by "id_categorie" ;
 select nom, id_equipe from equipes;
 
------------------------------------------------
 
-habilitation=1
-peut tout gerer, salles, adherents, update categories,gerer le calendrier, gerer les equipes, ajouter/modifier les actualités
-changer mdp
 
-habilitation =2
 
-peut gerer les equipes, gerer les matchs/entrainements ,salles, changer son mdp, gerer calendrier
-
-habilitation=3
-peut changer son mdp, acces direct a son calendrier, acces aux salles sans pouvoir les modifier, consulter les actualités de l'équipe
 
 
 

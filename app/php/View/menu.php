@@ -4,7 +4,7 @@
         z-index: 1;
         top: 20px;
         left: 10px;
-        background: #eee;
+        background: #D3D3D3;
         overflow-x: hidden;
         padding: 8px 0;
     }
@@ -23,21 +23,16 @@
 
     .main {
         margin-left: 140px; /* Same width as the sidebar + left position in px */
-        font-size: 28px; /* Increased text to enable scrolling */
         padding: 0px 10px;
     }
 </style>
 
-
+<div class="row">
 <!-- Side navigation -->
-<div class="sidenav">
+<div class="sidenav col-sm-3">
     <a class="nav-link" href="gestionAdherent.php">Gerer les adhérents</a>
-    <a href="#services">Gerer les matchs</a>
+    <a href="gestionMatch.php">Gerer les matchs</a>
     <a href="#clients">Gerer les equipes</a>
     <a href="#contact">Contact</a>
 </div>
 
-<!-- Page content -->
-<div class="main">
-    ...
-</div> 
