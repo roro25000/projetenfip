@@ -6,18 +6,26 @@ require("../Autoloader.php");
 
 use App\Autoloader;
 use AccesBDD;
-use Controlleur\AdherentControlleur;
+use Controlleur\equipeControlleur;
 
 Autoloader::register();
 
 
 
 $db = AccesBDD::connectBDD();
-$t = new AdherentControlleur($db);
-$te = $t->getAll();
+$t = new equipeControlleur($db);
+//$te = $t->getJoueurs($_GET['id']);
+$eq = $t->getNomUneEquipe($_GET['id']);
+$te = $t->getJoueurs($_GET['id']);
 ?>
+
 <div class ="col-sm-9">
     <br />
+        <h2><?php 
+                $nomEquipe = $eq->fetch(PDO::FETCH_ASSOC);
+                $eq = new \Model\Equipe($nomEquipe);
+                echo $eq->getNom();
+    ?></h2>
     <table class="table">
         <thead>
             <tr>

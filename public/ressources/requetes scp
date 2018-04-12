@@ -89,13 +89,8 @@ id_match:
 select categorie,id_categorie from categories order by "id_categorie" ;
 select nom, id_equipe from equipes;
 
------------------------------------------------
 
-habilitation=1
-peut tout gerer, salles, adherents, update categories,gerer le calendrier, gerer les equipes, ajouter/modifier les actualités
-changer mdp
 
-habilitation =2
 
 peut gerer les equipes, gerer les matchs/entrainements ,salles, changer son mdp, gerer calendrier
 
@@ -136,6 +131,8 @@ catégorie ou plus jeune, en fonction des surclassements de chacun
 
 
 
+
+select equipes.nom,id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;
 select equipes.nom,id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;
 requetes :
 select equipes.nom,

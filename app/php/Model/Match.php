@@ -6,6 +6,7 @@ Class Match {
 
     private $id_match;
     private $id_equipe_a;
+    private $nom_equipe_a;
     private $id_creneau;
     private $score_a;
     private $score_b;
@@ -27,8 +28,16 @@ Class Match {
             }
         }
     }
+    
+    function getNom_equipe_a() {
+        return $this->nom_equipe_a;
+    }
 
-    function getId_match() {
+    function setNom_equipe_a($nom_equipe_a) {
+        $this->nom_equipe_a = $nom_equipe_a;
+    }
+
+        function getId_match() {
         return $this->id_match;
     }
 
