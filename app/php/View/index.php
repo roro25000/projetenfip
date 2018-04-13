@@ -2,8 +2,10 @@
 //test
 //        phpinfo();
 require "entete.php";
-require "piedPage.php";
 ?>
 
+
+<?php require "piedPage.php";
+?>
 
 

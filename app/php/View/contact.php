@@ -77,3 +77,5 @@
    </nav>
         </div>
 </form>
+    
+    <?php require "piedPage.php"; ?>

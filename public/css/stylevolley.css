@@ -2,10 +2,8 @@ body {
   min-height:500px; 
   height:auto !important; 
   height:500px;
-}
 
-body {
-    padding-top:20px
+  padding-top:20px
 }
 .divCentree
 {
@@ -23,12 +21,41 @@ body {
     border-color: #f1f1f1;
 }
 
-.card-footer text-muted {
-    position: fixed;
+.bonjour {
+    .bonjour {
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    background-color: red;
     text-align: center;
 }
 
+
+.entete{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: red;
+    text-align: center;
+}
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    text-align: center;
+}
+
+
+.entete{
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: red;
+    text-align: center;
+}
+    
+    
+    
