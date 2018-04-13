@@ -8,6 +8,11 @@ use Controlleur\equipeControlleur;
 
 use Controlleur\calendrierControlleur;
 Autoloader::register();
+
+
+
+
+
 ?>
 
 
@@ -93,6 +98,8 @@ echo 'le fichier fait '.$nbLignes.' ligne(s).';
          
 	}
             ?>
+             
+                
 	</table>
 </body>
 
