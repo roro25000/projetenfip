@@ -2,10 +2,9 @@
 
 namespace Controlleur;
 
-//use Model\categorie as Categorie;
 use PDO;
 
-class categorieControlleur {
+class PosteControlleur {
 
     private $db;
 
@@ -14,7 +13,7 @@ class categorieControlleur {
     }
 
     function getAll() {
-        $qry = $this->db->prepare("SELECT * FROM categories;");
+        $qry = $this->db->prepare("SELECT * FROM postes;");
         $qry->execute();
         return $qry;
     }

@@ -41,5 +41,7 @@ $te = $t->getAll();
             <?php }; ?>
         </tbody>
     </table>
+    <a class="btn btn-danger btn-lg btn-block" href="ajoutAdherent.php" role="button">Ajout d'un joueur</a>
 </div>
 </div>
+
