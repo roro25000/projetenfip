@@ -147,3 +147,8 @@ id_championnat,
 creneaux.debut
 from matchs,equipes,creneaux where equipes.id_equipe=id_equipe_a and creneaux.id_creneau = matchs.id_creneau
 order by creneaux.debut DESC;
+
+
+insert into creneaux values (1000,1,current_timestamp,current_timestamp+ interval '2hours');
+
+insert into adherents (id_adherent,id_categorie,id_poste,login,mdp,nom,prenom,no_licence,date_naissance,genre,surclassement,habilitation,arbitre,entraineur) values (3,3,3,dd,dd,dd,dd,dd,date,char,int,int,bool,bool);
