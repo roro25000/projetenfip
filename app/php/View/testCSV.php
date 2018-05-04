@@ -8,11 +8,6 @@ use Controlleur\equipeControlleur;
 
 use Controlleur\calendrierControlleur;
 Autoloader::register();
-
-
-
-
-
 ?>
 
 
@@ -20,9 +15,9 @@ Autoloader::register();
 <body>
 
 <table border="2">
-    
-    <?php echo "public/ressources/csv/".$_POST['URLCSV']; ?>
-		<tr>
+
+    <?php //echo "public/ressources/csv/".$_POST['URLCSV']; ?>
+	<!--	<tr>
 			<th>ENTITE</th>
 			<th>JOURNEE</th>
 			<th>MATCH</th>
@@ -38,20 +33,19 @@ Autoloader::register();
                         <th>SALLE</th>
                         <th>ARBITRE 1</th>
                         <th>ARBITRE 2</th>
-                        
-		</tr>
-	
+		</tr> -->
+
 	<?php
-	$loc = "../../../public/ressources/csv/ffvb_calendrier.csv";
-        
+	$loc = "../../../public/ressources/csv/r2f.csv";
+
 
 $tabFich = file($loc);
 
 $nbLignes = count($tabFich);
 
-echo 'le fichier fait '.$nbLignes.' ligne(s).';
+//echo 'le fichier fait '.$nbLignes.' ligne(s).';
 
-	$fd = fopen("$loc","r"); 
+	$fd = fopen("$loc","r");
 	$tab = array();
 	//$tab = list($user, $pass, $uid, $gid, $gecos, $home, $shell)
 	$tab2 = array();
@@ -65,15 +59,15 @@ echo 'le fichier fait '.$nbLignes.' ligne(s).';
 		while (($buffer = fgets($fd)) != false) {
 			$tab2[] = $buffer;
 		}
-		
+
 		asort($tab2);
 	//	foreach ($tab2 as $str)
         for($i=1;$i<$nbLignes;$i++)
 		{
                    $db = AccesBDD::connectBDD();
-                   $str=$tab2[$i];         
+                   $str=$tab2[$i];
                     $tab = explode(';',$str);
-			echo "<tr>";
+/*			echo "<tr>";
 			echo "<td>$tab[0]</td>";
 			echo "<td>$tab[1]</td>";
 			echo "<td>$tab[2]</td>";
@@ -84,23 +78,21 @@ echo 'le fichier fait '.$nbLignes.' ligne(s).';
 			echo "<td>$tab[7]</td>";
                         echo "<td>$tab[8]</td>";
                         echo "<td>$tab[9]</td>";
-			echo "<td>$tab[10]</td>";
+                        echo "<td>$tab[10]</td>";
 			echo "<td>$tab[11]</td>";
-                        echo "<td>$tab[12]</td>";
-			echo "<td>$tab[13]</td>";
-			echo "<td>$tab[14]</td>";
-			echo "</tr>";
-                   	$t = new calendrierControlleur($db);    
-                   $te = $t->InsertionCreneau($tab[3]." ".$tab[4],$tab[3] ." 18:00",$tab[12]); 
-                    
+                echo "<td>$tab[12]</td>";
+		echo "<td>$tab[13]</td>";
+                echo "<td>$tab[14]</td>";
+		echo "</tr>"; */
+             	$t = new calendrierControlleur($db);
+                $te = $t->InsertionCreneau($tab[4],$tab[3],$tab[4],$tab[3],$tab[12]);
+                $creneauxID = $t->maxIdCreneau();
+                $match = $t->insertionMatch($tab[2],$_POST['equipe_id'],$tab[9],$tab[10],$tab[11],$tab[8],$creneauxID);
 
-		}
-         
+        	}
 	}
             ?>
-             
-                
 	</table>
 </body>
 
-</html> 
+</html>

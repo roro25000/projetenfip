@@ -16,7 +16,6 @@ namespace Controlleur;
 class calendrierControlleur {
 
     private $db;
-
     function __construct($db) {
         $this->setDb($db);
     }
@@ -35,7 +34,7 @@ class calendrierControlleur {
         return $string;
     }
 
-    
+
     function getAll() {
         //     $qry = $this->db->prepare("SELECT * FROM categories;");
         //     $qry->execute();
@@ -43,7 +42,7 @@ class calendrierControlleur {
         //     echo '<p id="catégorie">';
         //     while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)){
         //         $categ = new \Model\Categorie($donnees);
-        //         echo $categ->getCategorie().'<br />';          
+        //         echo $categ->getCategorie().'<br />';
         //     };
         //     echo '</p>';
         //     echo ' </div></p>';
@@ -61,11 +60,11 @@ class calendrierControlleur {
           id: " . $row['id_creneau'] . ",
           title: '" . $row['equipe'] . " contre " . $this->apostropheSession($row['adversaire']) . " (" . $row['salle'] . ")',
           start: '" . $row['debut'] . "',
-          end:'" . $row['fin'] . "'    
+          end:'" . $row['fin'] . "'
         },";
         };
     }
-    
+
         function getMatch2() {
         $sql = ' select id_creneau,debut, fin, salles.nom as "salle",'
                 . ' eq.nom as "equipe", '
@@ -73,35 +72,51 @@ class calendrierControlleur {
                 . 'from creneaux join salles using(id_salle) '
                 . 'join matchs ma using(id_creneau) '
                 . 'join equipes eq on ma.id_equipe_a=eq.id_equipe';
-        
+
             $qry = $this->db->prepare($sql);
         $qry->execute();
-        
-     
+
+
     }
-    
-    function InsertionCreneau($debut,$fin,$salle){
-    
-    
-    $sql = "insert into creneaux(debut,fin,id_salle) values( '".$debut."','".$fin."','".$this->getSalle($salle)."');";
-    echo $sql;
-     $qry = $this->db->prepare($sql);
-     $qry->execute();
-     
-    
+
+    function InsertionCreneau($hdebut,$ddebut,$hfin,$dfin,$salle){
+
+        $datedebut=  date($ddebut." ".$hdebut);
+        $date = new \DateTime();
+        $datetimeFormat = 'Y-m-d H:i';
+        $h =  substr($hfin,1,1)+2;
+        $hfin = substr($hfin,0,1).$h.substr($hfin,2);
+        $datefin = date($dfin." ".$hfin);
+
+        $sql = "insert into creneaux(debut,fin,id_salle) values( '".$datedebut."','".$datefin."','".$this->getSalle($salle)."');";
+        $qry = $this->db->prepare($sql);
+        $qry->execute();
     }
-    
-    
-    
-    
-    
+    function insertionMatch($idMatch,$id_equipe_A,$set,$score,$total,$nom_equipe_b,$creneau){
+
+
+        $this->maxIdCreneau();
+        $sql = "insert into matchs(id_match,id_equipe_a,id_creneau,score,set,total,nom_equipe_b) values( '".$idMatch."','".$id_equipe_A."','".$creneau."','".$set."','".$score."','".$total."','".$nom_equipe_b."');";
+  //      echo $sql;
+        $qry = $this->db->prepare($sql);
+        $qry->execute();
+
+
+    }
+    function maxIdCreneau(){
+        $sql = "select max(id_creneau) as max from creneaux;";
+       $qry = $this->db->query($sql);
+      $donnees = $qry->fetch();
+        return $donnees['max'];
+    }
+
 
     function getSalle($salle){
         $salle= $this->EBizzare($salle);
         $salle= strtoupper($salle);
         if($salle == "MONASTIE"){
             $id_salle=2;
-       
+
         }elseif ($salle == "RIVIERE") {
             $id_salle=1;
         }else{
@@ -109,24 +124,24 @@ class calendrierControlleur {
         }
          return $id_salle;
     }
-        
-        
-        
-    
+
+
+
+
     public function add() {
-        
+
     }
 
     public function update() {
-        
+
     }
 
     public function delete() {
-        
+
     }
 
     public function getOne($id) {
-        
+
     }
 
     function setDb($_db) {

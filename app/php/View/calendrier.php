@@ -69,7 +69,7 @@ $(document).ready(function() {
 
 <form method="post" action="testCSV.php">
     
-    <select name="equipe_id">
+    <select id="equipe_id" name="equipe_id">
     <?php 
     $eq = new equipeControlleur($db);
     $eqga = $eq->getAll();
@@ -86,8 +86,25 @@ $(document).ready(function() {
     
     
 </form>
+<a title="" href="">M7</a>
+<a title="" href="">M9</a>
+<a title="" href="">M11</a>
+<a title="" href="#">M11F2</a>
+<a title="" href="#">M11 2</a>
+<a title="" href=""> M13F</a>
+<a title="" href=""> M13M</a>
+<a title="" href=""> M15F</a>
+<a title="" href=""> M15M</a>
+<a title="" href="http://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2017%2F2018&codent=LILR&poule=7F4&calend=COMPLET&equipe=4&x=4&y=4">
+    M17F</a>
+<a title="" href="http://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2017%2F2018&codent=LILR&poule=7M1&calend=COMPLET&equipe=3&x=6&y=2">
+    M17M</a>
 
 
+<a title="" href="http://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2017%2F2018&codent=LILR&poule=R2F&calend=COMPLET&equipe=4&x=5&y=3">
+    R2F</a>
+<a title="" href="http://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2017%2F2018&codent=LILR&poule=PF4&calend=COMPLET&equipe=4&x=5&y=6">
+    PNF</a>
  <div class="card-footer text-muted">
 </div> 
 </body>
