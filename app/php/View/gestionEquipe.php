@@ -1,6 +1,5 @@
 <?php
 require "entete.php";
-require "piedPage.php";
 require "menu.php";
 require("../Autoloader.php");
 
@@ -51,3 +50,6 @@ $te = $t->getAll();
     </table>
 </div>
 </div>
+
+<br>
+<?php require "piedPage.php";?>

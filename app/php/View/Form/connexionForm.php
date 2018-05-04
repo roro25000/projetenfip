@@ -10,7 +10,6 @@
                 <div class="form-group">
                     <label for="identifiant">Identifiant</label>
                     <input type="text" class="form-control" id="identifiant" name="identifiant" aria-describedby="identifiantAide" placeholder="Entrer votre identifiant">
-                    <small id="identifiantAide" class="form-text text-muted">Merci de renseigner votre identifiant</small>
                 </div>
                 <div class="form-group">
                     <label for="motdepasse">Mot de passe</label>
@@ -24,9 +23,11 @@
             </form>
         </div>
         <div class="card-footer text-muted">
-            mot de passe oublié ? 
+            Mot de passe oublié ? 
         </div>
     </div>
 </div>
 
 </div>
+
+

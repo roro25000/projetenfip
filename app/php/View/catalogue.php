@@ -15,6 +15,8 @@ $db = AccesBDD::connectBDD();
 $t = new CatalogueControlleur($db);
 $te = $t->getAll();
 ?>
+
+<br>
 <div class="row">
     <?php
     while ($donnees = $te->fetch(PDO::FETCH_ASSOC)) {

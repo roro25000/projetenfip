@@ -27,4 +27,3 @@ if (isset($_SESSION['identifiant'])) {
 }
 ?>
 
-<?php require "piedPage.php"; ?>
