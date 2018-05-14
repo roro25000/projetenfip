@@ -87,7 +87,8 @@ class calendrierControlleur {
         $h =  substr($hfin,1,1)+2;
         $hfin = substr($hfin,0,1).$h.substr($hfin,2);
         $datefin = date($dfin." ".$hfin);
-
+        echo $salle;
+        echo $this->getSalle($salle);
         $sql = "insert into creneaux(debut,fin,id_salle) values( '".$datedebut."','".$datefin."','".$this->getSalle($salle)."');";
         $qry = $this->db->prepare($sql);
         $qry->execute();
@@ -96,6 +97,7 @@ class calendrierControlleur {
 
 
         $this->maxIdCreneau();
+        
         $sql = "insert into matchs(id_match,id_equipe_a,id_creneau,score,set,total,nom_equipe_b) values( '".$idMatch."','".$id_equipe_A."','".$creneau."','".$set."','".$score."','".$total."','".$nom_equipe_b."');";
   //      echo $sql;
         $qry = $this->db->prepare($sql);

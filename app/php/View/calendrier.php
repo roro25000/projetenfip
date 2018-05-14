@@ -63,7 +63,12 @@ $te = $t->getMatch();
                     </style>
                
                 </div>
-                     <form method="post" action="testCSV.php">
+
+                        <?php
+if (isset($_SESSION['identifiant'])) {
+
+?>
+                                          <form method="post" action="testCSV.php">
 
                         <select name="equipe_id">
                             <?php
@@ -77,12 +82,13 @@ $te = $t->getMatch();
 } ?>
                             </option>
                         </select>
-
                         <input name="URLCSV" type="file" accept=".csv" />
                         <input type="submit" >
 
 
                     </form>
+                <?php }
+?> 
             </div>
         </div>
     </div>

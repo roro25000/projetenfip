@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <script src="../../../public/bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+        <script src="../../../public/bootstrap-4.0.0/dist/js/bootstrap.min.js" ></script>
         <link rel="stylesheet" href="../../../public/ionicons-2.0.1/css/ionicons.min.css">
  
         <link rel="stylesheet" href="../../../public/bootstrap-4.0.0/dist/css/bootstrap.min.css">

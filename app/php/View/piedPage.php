@@ -5,7 +5,7 @@
             <img class="d-block" src="../../../public/img/partenaires/la-part-de-reve.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/l-air-du-temps.jpg" alt="Second slide">
+            <img class="d-block " src="../../../public/img/partenaires/l-air-du-temps.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
             <img class="d-block" src="../../../public/img/partenaires/Vue_de_reve.png" alt="Third slide">

@@ -88,7 +88,6 @@ $nbLignes = count($tabFich);
                 $te = $t->InsertionCreneau($tab[4],$tab[3],$tab[4],$tab[3],$tab[12]);
                 $creneauxID = $t->maxIdCreneau();
                 $match = $t->insertionMatch($tab[2],$_POST['equipe_id'],$tab[9],$tab[10],$tab[11],$tab[8],$creneauxID);
-
         	}
 	}
             ?>
