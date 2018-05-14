@@ -38,7 +38,7 @@ require "entete.php";
           <div class="col-xl-9 mx-auto">
             <div class="cta-inner text-center rounded">
               <h2 class="section-heading mb-4">
-                <span class="section-heading-lower">Calendrier</span>
+                <span class="section-heading-lower">Information et recrutement</span>
               </h2>
               <p class="mb-0">Votre club vit grâce à l’implication de bénévoles. Vous avez un peu de temps libre? Vous souhaitez vous investir auprès de jeunes? Venez nous rencontrer!
 Afin de faciliter les premiers pas dans l’entrainement, le club vous accompagne tout au long de la saison. Les entraîneurs bénévoles qui le souhaitent pourront être assistés pendant leurs entraînements par des entraîneurs plus expérimentés. De plus, des 1/2 journées de formation seront proposées régulièrement tout au long de l’année.

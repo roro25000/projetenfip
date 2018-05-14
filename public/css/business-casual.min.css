@@ -170,8 +170,9 @@ p
     
     .carousel-item 
     {
-       width:100px;
-       height:auto;
+       min-height:10rem;
+       max-height:10rem;
+       margin-top:1rem;
     }
     
     @media (min-width:992px)
