@@ -41,7 +41,18 @@ class AdherentControlleur {
     }
 
     public function add() {
-        
+       if((isset($_POST['motdepasse']))){
+//           &(isset($_POST['nom']))&(isset($_POST['prenom']))&(isset($_POST['email']))&(isset($_POST['motdepasse']))&(isset($_POST['categorie']))&(isset($_POST['poste']))&(isset($_POST['habilitation']))
+           $qry = $this->db->prepare("insert into adherents (id_categorie,id_poste,login,mdp,nom,prenom,date_naissance,genre,surclassement,habilitation,arbitre,entraineur) "
+                   . "values ('".$_POST['categorie']."',".$_POST['poste'].",".$_POST['identifiant'].",'".$_POST['motdepasse']."'"
+                   . ",'".$_POST['nom']."','".$_POST['prenom']."',".$_POST['dateNaissance'].",'".$_POST['dateNaissance']."',".$_POST['surclassement'].",".$_POST['habilitation'].",f,f);");
+           echo "insert into adherents (id_categorie,id_poste,login,mdp,nom,prenom,date_naissance,genre,surclassement,habilitation,arbitre,entraineur) "
+                   . "values (".$_POST['categorie'].",".$_POST['poste'].",".$_POST['identifiant'].",'".$_POST['motdepasse']."'"
+                   . ",'".$_POST['nom']."','".$_POST['prenom']."',".$_POST['dateNaissance'].",'".$_POST['dateNaissance']."',".$_POST['surclassement'].",".$_POST['habilitation'].",true,true);";
+           $qry->execute();
+           return $qry;
+           
+       } 
     }
 
     public function update() {

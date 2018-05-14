@@ -1,6 +1,6 @@
 <?php
 require "entete.php";
-
+require "piedPage.php";
 require "menu.php";
 require("../Autoloader.php");
 
@@ -41,7 +41,7 @@ $te = $t->getAll();
             <?php }; ?>
         </tbody>
     </table>
+    <a class="btn btn-danger btn-lg btn-block" href="ajoutAdherent.php" role="button">Ajout d'un joueur</a>
 </div>
 </div>
 
-<?php require "piedPage.php"; ?>
