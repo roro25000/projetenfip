@@ -61,8 +61,4 @@ $te = $t->getAll();
 </section>
 
 
-
-
-
-
 <?php require "piedPage.php"; ?>

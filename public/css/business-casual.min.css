@@ -122,6 +122,19 @@ a.nav-link
     background-color:rgba(255,255,255,.85);
     margin-right:0.5rem;
 }
+.card2
+{
+    font-family:Lora;
+    height:56rem;
+    background-color:rgba(255,255,255,.85);
+    border-radius:.5rem;
+    content:'';
+    top:-.5rem;
+    bottom:-.5rem;
+    left:-.5rem;
+    right:-.5rem;
+    border:.25rem solid rgba(255,255,255,.85);
+}
 .btn btn-primary
 {
     margin-top:0.2rem;
@@ -181,13 +194,14 @@ a.nav-link
 .cta .cta-inner:before
 {
     border-radius:.5rem;
+    border-collapse:separate;
     position:absolute;                  
     top:-.5rem;
     bottom:-.5rem;
     left:-.5rem;
     right:-.5rem;
     border:.25rem solid rgba(255,255,255,.85);
-    border-style:double;
+
 
 }
 
@@ -272,6 +286,7 @@ a.nav-link
 {
     background-color:#f8faf9;
 }
+
 
 .text-primary
 {

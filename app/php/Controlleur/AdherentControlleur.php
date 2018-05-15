@@ -56,6 +56,9 @@ class AdherentControlleur {
            if(isset($_POST['entrainneur'])){
                $entrainneur = 't';
            }
+           
+           header('Location: gestionAdherent.php');
+           
            $sql = "insert into adherents (id_categorie,id_poste,login,mdp,nom,prenom,date_naissance,genre,surclassement,habilitation,arbitre,entraineur) "
                    . "values (".$_POST['categorie'].",".$_POST['poste'].",'".$_POST['identifiant']."','".$_POST['motdepasse']."'"
                    . ",'".$_POST['nom']."','".$_POST['prenom']."','".$new_date."','".$_POST['genre']."',".$surclassement.",'".$_POST['habilitation']."','".$arbitre."','".$entrainneur."');";

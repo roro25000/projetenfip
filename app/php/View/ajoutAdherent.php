@@ -1,6 +1,5 @@
 <?php
 require "entete.php";
-require "piedPage.php";
 require "menu.php";
 require("../Autoloader.php");
 
@@ -24,9 +23,9 @@ $categ = $u->getAll();
 $pst = $p->getAll();
 ?>
 
-<div class="col-sm-7 offset-sm-1 ">
+<div class="col-sm-6 offset-sm-3 ">
     <br />
-    <div class="card">
+    <div class="card2">
         <div class="card-header text-center">
             <h3>Ajout adherent</h3>
         </div>
@@ -109,7 +108,7 @@ $pst = $p->getAll();
                     <div class="col-sm-7 ">
                         <div class="dropdown">
                             <button class="btn btn-danger btn-block dropdown-toggle" type="button" id="DDposte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                poste
+                                Poste
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <?php
@@ -148,11 +147,11 @@ $pst = $p->getAll();
                             </button>
                             <div class="dropdown-menu">
                                 <?php
-                                $entr = "entrainneur";
+                                $entr = "Entraîneur";
                                 $entrId = 2;
-                                $adm = "administrateur";
+                                $adm = "Administrateur";
                                 $admId = 1;
-                                $joueur = "joueur";
+                                $joueur = "Joueur";
                                 $jId = 3;
                                 ?>
                                 <button class="dropdown-item" onclick="changementDropdownHab(<?php echo "'" . $entrId . "','" . $entr . "'"; ?>)"type="button"><?php echo $entr; ?></button>
@@ -191,10 +190,10 @@ $pst = $p->getAll();
             </div>
             <div class="form-group row ">
                 <div class="col-sm-3">
-                    <label for="entrainneur">Entrainneur</label>
+                    <label for="entraineur">Entraîneur</label>
                 </div>
                 <div class="col-sm-5 ">
-                    <input name='entrainneur' type="checkbox" class="form-control" id="entrainneur" value="ok">
+                    <input name='entraineur' type="checkbox" class="form-control" id="entraineur" value="ok">
                 </div>
             </div>
                 </div>
@@ -258,8 +257,19 @@ $pst = $p->getAll();
             document.querySelector('#creationAdherent').removeAttribute("disabled");
         } else {
             if ((pw1 !== "") && (pw2 !== "")) {
-                alert("\erreur: les mots de passes ne correspondent pas");
+                alert("\erreur: Les mots de passes ne correspondent pas");
             }
         }
     }
 </script>
+
+
+<?php
+for ($nombre_de_saut_de_lignes = 1; $nombre_de_saut_de_lignes <= 8; $nombre_de_saut_de_lignes++)
+{
+echo "<br />";
+}
+?>
+
+<?php 
+require "piedPage.php";?>
