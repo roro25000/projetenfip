@@ -75,6 +75,7 @@ $aj = $t->getAutresJoueurs($_GET['id']);
                             <th scope="col">Nom</th>
                             <th scope="col">Prenom</th>
                             <th scope="col">Numero de licence</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,20 +83,62 @@ $aj = $t->getAutresJoueurs($_GET['id']);
                         while ($donnees = $aj->fetch(PDO::FETCH_ASSOC)) {
                             $adhe = new \Model\Adherent($donnees);
                             ?>
-                            <tr>
-                                <th scope="row"><?php echo $adhe->getId_adherent(); ?></th>
+                            <tr id="<?php echo $adhe->getId_adherent(); ?>"  >
+                                <td scope="row"><?php echo $adhe->getId_adherent(); ?></td>
                                 <td><?php echo strtoupper($adhe->getNom()); ?></td>
                                 <td><?php echo $adhe->getPrenom(); ?></td>
                                 <td><?php echo $adhe->getNo_licence(); ?></td>
+                                <td > <button id="ajoutJoueur<?php echo $adhe->getId_adherent(); ?>" class="btn btn-primary" role="button" onclick="ajoutJoueur(<?php echo $adhe->getId_adherent(); ?>)" style="visibility: visible;">
+                                        Ajouter
+                                    </button>
+                                    <button class="btn btn-info" onclick="annulJoueur(<?php echo $adhe->getId_adherent(); ?>)" role="button" id="annulJoueur<?php echo $adhe->getId_adherent(); ?>" style="visibility: hidden;" >
+                                        Annuler
+                                    </button></td>
                             </tr>
                         <?php }; ?>
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="valider()">Fermer</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+//    function testJoueur($id) {
+//        var tod = document.createElement("td")
+//        console.log(tod)
+//        var boutton = document.createElement("button")
+//        boutton.className = "btn btn-info"
+//        boutton.setAttribute("role", "button")
+//        boutton.onclick() = function(){
+//            ajoutJoueur($id)
+//        }
+//        tod.appendChild(boutton)
+//        console.log(tod)
+//        document.getElementById($id).appendChild(tod)
+//    }
+    var tabJoueur = []
+    function ajoutJoueur($id) {
+        tabJoueur.push($id)
+        sessionStorage.setItem("tabJoueur", tabJoueur)
+        document.getElementById("ajoutJoueur" + $id).style.visibility = 'hidden';
+        document.getElementById("annulJoueur" + $id).style.visibility = 'visible';
+    }
+
+    function annulJoueur($id) {
+        for (var i = 0; i < tabJoueur.length; i++) {
+            if (tabJoueur[i] === $id) {
+                delete tabJoueur[i]
+                document.getElementById("ajoutJoueur" + $id).style.visibility = 'visible';
+                document.getElementById("annulJoueur" + $id).style.visibility = 'hidden';
+            }
+        }
+    }
+
+    function valider() {
+        console.log(sessionStorage.getItem("tabJoueur"))
+    }
+</script>
