@@ -30,7 +30,8 @@ class calendrierControlleur {
     }
 
         function EBizzare($string) {//change une apostrophe vers un backslash une appostrophe pour les variables de sessions
-        $string = preg_replace("~�~", "E", $string);
+        $string = preg_replace(   "/\?/", "E", $string);
+      
         return $string;
     }
 
@@ -58,7 +59,7 @@ class calendrierControlleur {
         foreach ($this->query($sql) as $row) {
             echo "{
           id: " . $row['id_creneau'] . ",
-          title: '" . $row['equipe'] . " contre " . $this->apostropheSession($row['adversaire']) . " (" . $row['salle'] . ")',
+          title: '" . $row['equipe'] . " vs " . $this->apostropheSession($row['adversaire']) . " (" . $row['salle'] . ")',
           start: '" . $row['debut'] . "',
           end:'" . $row['fin'] . "'
         },";
@@ -78,6 +79,16 @@ class calendrierControlleur {
 
 
     }
+    function InversionScore($str){
+        $un="";
+        $trois="";
+        $carac="/";
+        $tab=explode($carac, $str);
+        $un=$tab[1];
+        $trois=$tab[0];
+        
+        return $un.$carac.$trois;
+    }
 
     function InsertionCreneau($hdebut,$ddebut,$hfin,$dfin,$salle){
 
@@ -87,8 +98,8 @@ class calendrierControlleur {
         $h =  substr($hfin,1,1)+2;
         $hfin = substr($hfin,0,1).$h.substr($hfin,2);
         $datefin = date($dfin." ".$hfin);
-        echo $salle;
-        echo $this->getSalle($salle);
+    
+     //   echo $this->getSalle($salle);
         $sql = "insert into creneaux(debut,fin,id_salle) values( '".$datedebut."','".$datefin."','".$this->getSalle($salle)."');";
         $qry = $this->db->prepare($sql);
         $qry->execute();
@@ -97,32 +108,50 @@ class calendrierControlleur {
 
 
         $this->maxIdCreneau();
-        
+      
         $sql = "insert into matchs(id_match,id_equipe_a,id_creneau,score,set,total,nom_equipe_b) values( '".$idMatch."','".$id_equipe_A."','".$creneau."','".$set."','".$score."','".$total."','".$nom_equipe_b."');";
+   
+  //      
   //      echo $sql;
         $qry = $this->db->prepare($sql);
         $qry->execute();
+        
 
 
     }
+    
+    function MAJpoint($point,$victoire,$defaite,$null,$id_equipe){
+        $sql = "update equipes set points=points+'".$point."' , victoires=victoires+'".$victoire."' , defaites=defaites'".$defaite."' , nulls=nulls'".$null."'  where id_equipe = '".$id_equipe."';";
+        //   echo $sql;
+        $qry = $this->db->prepare($sql);
+        $qry->execute();
+        
+    }
+    
+    
     function maxIdCreneau(){
         $sql = "select max(id_creneau) as max from creneaux;";
-       $qry = $this->db->query($sql);
-      $donnees = $qry->fetch();
+        $qry = $this->db->query($sql);
+        $donnees = $qry->fetch();
         return $donnees['max'];
     }
 
 
     function getSalle($salle){
-        $salle= $this->EBizzare($salle);
+     
+       $salle =mb_convert_encoding($salle,"UTF-8"); 
+          $salle= $this->EBizzare($salle);
         $salle= strtoupper($salle);
-        if($salle == "MONASTIE"){
+        switch ($salle){
+        case "MONASTIE" :
             $id_salle=2;
-
-        }elseif ($salle == "RIVIERE") {
+            break;
+        case "RIVIERE" :
             $id_salle=1;
-        }else{
+            break;
+        default:
             $id_salle=3;
+           
         }
          return $id_salle;
     }
