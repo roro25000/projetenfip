@@ -19,7 +19,7 @@ $t = new AdherentControlleur($db);
 $u = new categorieControlleur($db);
 $p = new PosteControlleur($db);
 $te = $t->getAll();
-$t->add();  
+$t->add();
 $categ = $u->getAll();
 $pst = $p->getAll();
 ?>
@@ -133,7 +133,7 @@ $pst = $p->getAll();
                         <label for="surclassement">Surclassement</label>
                     </div>
                     <div class="col-sm-5 ">
-                        <input type="checkbox" class="form-control" id="surclassement">
+                        <input name='surclassement' type="checkbox" class="form-control" id="surclassement" value="ok">
                     </div>
                 </div>
 
@@ -166,7 +166,7 @@ $pst = $p->getAll();
                 <div class="form-group row justify-content-between" >
                     <div class="col-sm-3"><label for="dateNaissance">Date de naissance</label></div>
                     <div class="col-sm-7 ">
-                        <input type=date id="dateNaissance" onchange="testDateNaissance(document.querySelector('#datepicker').value)" name="datepicker" />
+                        <input type=date id="dateNaissance" onchange="testDateNaissance(document.querySelector('#datepicker').value)" name="dateNaissance" />
                     </div> 
                 </div>
                 <div class="form-group row justify-content-between">
@@ -174,17 +174,34 @@ $pst = $p->getAll();
                         <label for="genre">Genre</label>
                     </div>
                     <div class="col-sm-7">
-                        <select class="form-control" id="Genre">
+                        <select class="form-control" id="Genre" name="genre">
                             <option>M</option>
                             <option>F</option>
                         </select> 
                     </div>
                 </div>
+            
+            <div class="form-group row ">
+                <div class="col-sm-3">
+                    <label for="arbitre">Arbitre</label>
+                </div>
+                <div class="col-sm-5 ">
+                    <input name='arbitre' type="checkbox" class="form-control" id="arbitre" value="ok">
+                </div>
             </div>
+            <div class="form-group row ">
+                <div class="col-sm-3">
+                    <label for="entrainneur">Entrainneur</label>
+                </div>
+                <div class="col-sm-5 ">
+                    <input name='entrainneur' type="checkbox" class="form-control" id="entrainneur" value="ok">
+                </div>
+            </div>
+                </div>
             <div class="card-footer text-muted">
                 <button type="submit" class="btn btn-primary btn-block" id="creationAdherent">Creer</button>
             </div>
-
+                
         </form>
 
     </div>
@@ -193,7 +210,7 @@ $pst = $p->getAll();
 </div>
 
 <script>
-    
+
 
     function testDateNaissance(date) {
         document.querySelector('#creationAdherent').setAttribute("disabled", "")

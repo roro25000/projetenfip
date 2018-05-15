@@ -33,14 +33,16 @@ class equipeControlleur {
         $qry = $this->db->prepare("SELECT adherents.id_adherent,adherents.nom,adherents.prenom,adherents.no_licence
                                     FROM equipes,joue,adherents
                                     WHERE joue.id_adherent=adherents.id_adherent
-                                    AND equipes.id_equipe='".$id."'
-                                    AND joue.id_equipe='".$id."';");
+                                    AND equipes.id_equipe='" . $id . "'
+                                    AND joue.id_equipe='" . $id . "';");
         $qry->execute();
         return $qry;
     }
 
-    public function add() {
-        
+    public function getAutresJoueurs($id) {
+        $qry = $this->db->prepare("select * from adherents where id_adherent in (select id_adherent from adherents except select id_adherent from joue where id_equipe = " . $id . ") ORDER BY nom;");
+        $qry->execute();
+        return $qry;
     }
 
     public function update() {

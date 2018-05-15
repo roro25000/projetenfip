@@ -23,9 +23,10 @@ $te = $t->getAll();
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nom equipe A</th>
+                <th scope="col">Nom equipe B</th>    
                 <th scope="col">Score</th>
-                <th scope="col">Nom equipe B</th>             
-                <th scope="col">Score</th>
+                <th scope="col">Set</th>         
+                <th scope="col">Total</th>
             </tr>
         </thead>
         <tbody>
@@ -36,29 +37,10 @@ $te = $t->getAll();
                 <tr>
                     <th scope="row"><?php echo $match->getId_match(); ?></th>
                     <td><?php echo $match->getNom_equipe_a(); ?></td>
-                    <?php
-                    if (!$match->getScore_a() & !$match->getScore_b()) {
-                        echo '<td style="background-color:#cccccc;"> 0 </td>';
-                    } else {
-                        if ($match->getScore_a() > $match->getScore_b()) {
-                            echo '<td style="background-color:#6fdc6f;">' . $match->getScore_a() . '</td>';
-                        } else {
-                            echo '<td style="background-color:#ff4d4d;">' . $match->getScore_a() . '</td>';
-                        }
-                    }
-                    ?>
-                    <td><?php echo $match->getNom_equipe_b(); ?></td>  
-                    <?php
-                    if (!$match->getScore_b() & !$match->getScore_a()) {
-                        echo '<td style="background-color:#cccccc;"> 0 </td>';
-                    } else {
-                        if ($match->getScore_a() > $match->getScore_b()) {
-                            echo '<td style="background-color:#ff4d4d;">' . $match->getScore_b() . '</td>';
-                        } else {
-                            echo '<td style="background-color:#6fdc6f;">' . $match->getScore_b() . '</td>';
-                        }
-                    }
-                    ?>
+                    <td><?php echo $match->getNom_equipe_b(); ?></td>
+                    <td><?php echo $match->getScore(); ?></td>
+                    <td><?php echo $match->getSet(); ?></td>
+                    <td><?php echo $match->getTotal(); ?></td>
                 </tr>
             <?php }; ?>
         </tbody>
@@ -71,3 +53,4 @@ $te = $t->getAll();
 <?php
 require "piedPage.php";
 ?>
+

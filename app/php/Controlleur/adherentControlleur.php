@@ -15,7 +15,7 @@ class adherentControlleur {
 
     function connexion() {
         if (isset($_POST['identifiant'])) {
-            $qry = $this->db->prepare("select login,habilitation,mdp from adherents where login= '" . $_POST['identifiant'] . "'");
+            $qry = $this->db->prepare("select login,habilitation,mdp from adherents where login= '" . $_POST['identifiant'] . "' ORDER BY nom");
             $qry->execute();
             while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)) {
                 $adherent = new \Model\Adherent($donnees);

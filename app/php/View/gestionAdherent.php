@@ -34,7 +34,7 @@ $te = $t->getAll();
                 ?>
                 <tr>
                     <th scope="row"><?php echo $adhe->getId_adherent(); ?></th>
-                    <td><?php echo $adhe->getNom(); ?></td>
+                    <td><?php echo strtoupper($adhe->getNom()); ?></td>
                     <td><?php echo $adhe->getPrenom(); ?></td>
                     <td><?php echo $adhe->getNo_licence(); ?></td>
                 </tr>

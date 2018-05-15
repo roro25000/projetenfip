@@ -26,7 +26,7 @@ class MatchControlleur {
     }
 
     public function getAll(){
-        $qry = $this->db->prepare('select equipes.nom as "nom_equipe_a",id_match,id_equipe_a,id_creneau,score_a,score_b,duree,nom_equipe_b,id_championnat from matchs,equipes where equipes.id_equipe=id_equipe_a;');
+        $qry = $this->db->prepare('select equipes.nom as "nom_equipe_a",id_match,id_equipe_a,id_creneau,score,set,total,nom_equipe_b from matchs,equipes where equipes.id_equipe=id_equipe_a;');
         $qry->execute();
         return $qry;
     }
