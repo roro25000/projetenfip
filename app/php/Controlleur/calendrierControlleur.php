@@ -80,18 +80,32 @@ class calendrierControlleur {
 
     }
     function InversionScore($str){
-        $un="";
-        $trois="";
-        $carac="/";
-        $tab=explode($carac, $str);
-        $un=$tab[1];
-        $trois=$tab[0];
+       
+        return strrev($str);
+    }
+    function InversionTotal($str){
+        $tab=explode("-",$str);
+        return $tab[1]."-".$tab[0];
+    }
+    function InversionSet($str){
+        $tab=  explode(",", $str);
+        $re="";
+   
+        if (! isset($tab[3])) {
+            $re= $this->InversionTotal($tab[0]).",".$this->InversionTotal($tab[1]).",".$this->InversionTotal($tab[2]);
+        }
+        elseif (! isset($tab[4])){
+            $re= $this->InversionTotal($tab[0]).",".$this->InversionTotal($tab[1]).",".$this->InversionTotal($tab[2]).",".$this->InversionTotal($tab[3]);
+        }
+       else{
+                  $re= $this->InversionTotal($tab[0]).",".$this->InversionTotal($tab[1]).",".$this->InversionTotal($tab[2]).",".$this->InversionTotal($tab[3]).",".$this->InversionTotal($tab[4]); 
+        }
         
-        return $un.$carac.$trois;
+        return $re;
     }
 
     function InsertionCreneau($hdebut,$ddebut,$hfin,$dfin,$salle){
-
+       
         $datedebut=  date($ddebut." ".$hdebut);
         $date = new \DateTime();
         $datetimeFormat = 'Y-m-d H:i';
@@ -103,26 +117,55 @@ class calendrierControlleur {
         $sql = "insert into creneaux(debut,fin,id_salle) values( '".$datedebut."','".$datefin."','".$this->getSalle($salle)."');";
         $qry = $this->db->prepare($sql);
         $qry->execute();
+        
+        
+        
+        
+        
+        
+        
     }
     function insertionMatch($idMatch,$id_equipe_A,$set,$score,$total,$nom_equipe_b,$creneau){
-
+        $defaite=0;
+        $point=0;
+        $victoire=0;
 
         $this->maxIdCreneau();
       
         $sql = "insert into matchs(id_match,id_equipe_a,id_creneau,score,set,total,nom_equipe_b) values( '".$idMatch."','".$id_equipe_A."','".$creneau."','".$set."','".$score."','".$total."','".$nom_equipe_b."');";
    
-  //      
-  //      echo $sql;
+ 
         $qry = $this->db->prepare($sql);
         $qry->execute();
         
-
+        
+        echo $set;
+        $tab=  explode("/", $set);
+        echo $tab[0]."-".$tab[1];
+        if ($tab[0]==3 && $tab[1]==2){
+            $point=point+2;
+            $victoire++;
+            
+        }elseif ($tab[0] == 3){
+            $victoire++;
+            $point=$point+3;
+            
+        }else{
+            
+                $point++;
+                $defaite++;
+           
+        }
+        
+        $this->MAJpoint($point,$victoire,$defaite,$id_equipe_A);
+        
+      
 
     }
     
-    function MAJpoint($point,$victoire,$defaite,$null,$id_equipe){
-        $sql = "update equipes set points=points+'".$point."' , victoires=victoires+'".$victoire."' , defaites=defaites'".$defaite."' , nulls=nulls'".$null."'  where id_equipe = '".$id_equipe."';";
-        //   echo $sql;
+    function MAJpoint($point,$victoire,$defaite,$id_equipe){
+        $sql = "update equipes set points=points+'".$point."' , victoires=victoires+'".$victoire."' , defaites=defaites+'".$defaite."'  where id_equipe = '".$id_equipe."';";
+         //  echo $sql;
         $qry = $this->db->prepare($sql);
         $qry->execute();
         
