@@ -1,8 +1,8 @@
-<!--
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block" src="../../../public/img/partenaires/la-part-de-reve.jpg" alt="First slide">
+            <img class="d-block"  src="../../../public/img/partenaires/la-part-de-reve.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
             <img class="d-block " src="../../../public/img/partenaires/l-air-du-temps.jpg" alt="Second slide">
@@ -39,7 +39,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>-->
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

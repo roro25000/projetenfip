@@ -27,12 +27,17 @@
     }
 </style>
 
-<div class="row">
-<!-- Side navigation -->
-<div class="sidenav col-sm-3">
-    <a class="nav-link" href="gestionAdherent.php">Les adhérents</a>
-    <a href="gestionMatch.php">Les matchs</a>
-    <a href="gestionEquipe.php">Les equipes</a>
-    <a href="#contact">Contact</a>
-</div>
+<br>
 
+ <ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link"  href="gestionAdherent.php">Les adhérents</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="gestionMatch.php">Les matchs</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="gestionEquipe.php">Les équipes</a>
+  </li>
+
+</ul> 
