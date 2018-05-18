@@ -26,6 +26,9 @@ Autoloader::register();
                         $(document).ready(function () {
 
                             $('#calendar').fullCalendar({
+                                aspectRatio: 1.2,
+                                contentHeight: 600,
+
                                 locale: 'fr',
                                 header: {
                                     left: 'prev,next today',
@@ -36,7 +39,7 @@ Autoloader::register();
                                     echo "'$today'";
                                 ?>,
                                 navLinks: true, // can click day/week names to navigate views
-                                editable: true,
+                                editable: false,
                                 eventLimit: true, // allow more link when too many events
                                 events: [
 <?php
@@ -63,7 +66,24 @@ $te = $t->getMatch();
                     </style>
                
                 </div>
+                <form method="post" action="calendrier.php">
 
+                        <select name="equipe_id">
+                            <?php
+                            $eq = new equipeControlleur($db);
+                            $eqga = $eq->getAll();
+                            while ($donnees = $eqga->fetch(PDO::FETCH_ASSOC)) {
+                                $equipe = new \Model\Equipe($donnees);
+                                ?>
+                                <option value=<?php echo $equipe->getId_equipe(); ?> > 
+    <?php echo $equipe->getNom();
+} ?>
+                            </option>
+                        </select>
+                    <input type="submit" name="filtrer" value="filtrer">
+
+
+                    </form>
                         <?php
 if (isset($_SESSION['identifiant'])) {
 

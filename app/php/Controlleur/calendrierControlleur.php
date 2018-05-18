@@ -120,7 +120,10 @@ class calendrierControlleur {
         foreach ($this->query($sql) as $row) {
             echo "{
           id: " . $row['id_creneau'] . ",
-          title: '" . $row['equipe'] . " vs " . $this->apostropheSession($row['adversaire']) . " (" . $row['salle'] . ")',
+          
+          title: '" . $this->apostropheSession($row['adversaire']) . " à  " . $row['salle'] . " ("  . $row['equipe'] .  ")',
+  
+
           start: '" . $row['debut'] . "',
           end:'" . $row['fin'] . "',
           color:'".$this->getColor($row['id_equipe'])."'
