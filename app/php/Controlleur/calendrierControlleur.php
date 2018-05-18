@@ -30,63 +30,62 @@ class calendrierControlleur {
     }
 
         function EBizzare($string) {//change une apostrophe vers un backslash une appostrophe pour les variables de sessions
-        $string = preg_replace(   "/\?/", "E", $string);
-      
+        $string = preg_replace(   "/\?/", "E", $string);      
         return $string;
     }
     function getColor($id){
         
          switch ($id){
         case "1" :
-            $color='red';
+            $color='799dd8';
             break;
         case "2" :
-            $color='blue';
+            $color='74bc89';
             break;
         case "3" :
-            $color='grey';
+            $color='90b771';
             break;
         case "4" :
-            $color='white';
+            $color='71b7b3';
             break;
         case "5" :
-            $color='orange';
+            $color='71a2b7';
             break;
         case "6" :
-            $color='cyan';
+            $color='b77171';
             break;
         case "7" :
-            $color='pink';
+            $color='b77171';
             break;
         case "8" :
-            $color='purple';
+            $color='b7ae71';
             break;
         case "9" :
-            $color='yellow';
+            $color='a0b771';
             break;
         case "10" :
-            $color='green';
+            $color='717ab7';
             break;
         case "11" :
-            $color='brown';
+            $color='8a71b7';
             break;
         case "12" :
-            $color='beige';
+            $color='b171b7';
             break;
         case "13" :
-            $color='navyBlue';
+            $color='b7717d';
             break;
         case "14" :
-            $color='sylver';
+            $color='b771a4';
             break;
         case "15" :
-            $color='golden';
+            $color='71adb7';
             break;
         case "16" :
-            $color='turquoise';
+            $color='71b791';
             break;
         case "17" :
-            $color='mauve';
+            $color='c7e5b3';
             break;
         default :
             $color='ffdead';
