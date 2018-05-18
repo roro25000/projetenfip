@@ -5,6 +5,7 @@ body
     background-attachment:fixed;
     background-position:center;
     background-size:cover
+    
 }
 
 h1,h2,h3,h4,h5,h6
@@ -56,7 +57,8 @@ p
 }
 .bg-faded
 {
-    background-color:rgba(255,255,255,.85)
+    background-color:#FFFFFF
+        
 }
 #mainNav
 {
@@ -82,9 +84,14 @@ a.nav-link
     color:white;
 }
 
+fixed-top
+{
+    padding-top:5rem;
+}
+
 .couleur
 {
-    background-color:rgba(255,255,255,.85);
+    background-color:#FFFFFF;
 }
 @media (min-width:992px)
 {
@@ -119,21 +126,21 @@ a.nav-link
 {
     font-family:Lora;
     height:28rem;
-    background-color:rgba(255,255,255,.85);
+    background-color:#FFFFFF;
     margin-right:0.5rem;
 }
 .card2
 {
     font-family:Lora;
     height:56rem;
-    background-color:rgba(255,255,255,.85);
+    background-color:#FFFFFF;
     border-radius:.5rem;
     content:'';
     top:-.5rem;
     bottom:-.5rem;
     left:-.5rem;
     right:-.5rem;
-    border:.25rem solid rgba(255,255,255,.85);
+    border:.25rem solid #FFFFFF;
 }
 .btn btn-primary
 {
@@ -150,7 +157,8 @@ a.nav-link
     bottom:-.5rem;
     left:-.5rem;
     right:-.5rem;
-    border:.25rem solid rgba(255,255,255,.85)
+    border:.25rem solid #FFFFFF
+        
 }
 .col-sm-3
 {
@@ -189,7 +197,7 @@ a.nav-link
     position:relative;
     padding:3rem;
     margin:.5rem;
-    background-color:rgba(255,255,255,.85)
+    background-color:#FFFFFF
 }
 .cta .cta-inner:before
 {
@@ -200,7 +208,7 @@ a.nav-link
     bottom:-.5rem;
     left:-.5rem;
     right:-.5rem;
-    border:.25rem solid rgba(255,255,255,.85);
+    border:.25rem solid #FFFFFF;
 
 
 }
@@ -219,7 +227,7 @@ a.nav-link
 
 .carousel-inner
 {
-    background-color:rgba(255,255,255,.85);
+    background-color:#FFFFFF;
 }
 @media (min-width:992px)
 {

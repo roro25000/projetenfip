@@ -20,7 +20,7 @@ Autoloader::register();
 <section class="page-section cta" style="background:#B22222">
     <div class="container">
         <div class="row">
-            <div class="col-xl-9 mx-auto">
+            <div class="col-xl-12 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <script>
                         $(document).ready(function () {
