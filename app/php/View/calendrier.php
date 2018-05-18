@@ -8,6 +8,9 @@ use Controlleur\equipeControlleur;
 use Controlleur\calendrierControlleur;
 
 Autoloader::register();
+
+
+
 ?>
 
 <link href='../../../public/fullcalendar-3.9.0/fullcalendar.min.css' rel='stylesheet' />
@@ -45,7 +48,14 @@ Autoloader::register();
 <?php
 $db = AccesBDD::connectBDD();
 $t = new calendrierControlleur($db);
-$te = $t->getMatch();
+if (isset($_POST['equipe_id'])){
+  $te = $t->getMatch($_POST['equipe_id']);
+  
+}else
+{
+    $te = $t->getMatch(0);
+   
+}
 ?>
                                 ]});
                         })

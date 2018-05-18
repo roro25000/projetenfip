@@ -109,40 +109,36 @@ class calendrierControlleur {
         //     echo ' </div></p>';
     }
 
-    function getMatch() {
-        $sql = ' select id_creneau,debut, fin, salles.nom as "salle",'
+    function getMatch($equipe_id) {
+        if($equipe_id != 0){
+            $sql= ' select id_creneau,debut, fin, salles.nom as "salle",'
+                . ' eq.nom as "equipe", id_equipe,'
+                . 'nom_equipe_b as "adversaire" '
+                . 'from creneaux join salles using(id_salle) '
+                . 'join matchs ma using(id_creneau) '
+                . 'join equipes eq on ma.id_equipe_a=eq.id_equipe '
+                . 'where id_equipe='.$equipe_id;
+          
+        }else
+            
+        {
+           $sql = ' select id_creneau,debut, fin, salles.nom as "salle",'
                 . ' eq.nom as "equipe", id_equipe,'
                 
                 . 'nom_equipe_b as "adversaire" '
                 . 'from creneaux join salles using(id_salle) '
                 . 'join matchs ma using(id_creneau) '
                 . 'join equipes eq on ma.id_equipe_a=eq.id_equipe';
+        }
         foreach ($this->query($sql) as $row) {
             echo "{
-          id: " . $row['id_creneau'] . ",
-          
+          id: " . $row['id_creneau'] . ",         
           title: '" . $this->apostropheSession($row['adversaire']) . " à  " . $row['salle'] . " ("  . $row['equipe'] .  ")',
-  
-
           start: '" . $row['debut'] . "',
           end:'" . $row['fin'] . "',
           color:'".$this->getColor($row['id_equipe'])."'
         },";
         };
-    }
-
-        function getMatch2() {
-        $sql = ' select id_creneau,debut, fin, salles.nom as "salle",'
-                . ' eq.nom as "equipe", '
-                . 'nom_equipe_b as "adversaire" '
-                . 'from creneaux join salles using(id_salle) '
-                . 'join matchs ma using(id_creneau) '
-                . 'join equipes eq on ma.id_equipe_a=eq.id_equipe';
-
-            $qry = $this->db->prepare($sql);
-        $qry->execute();
-
-
     }
     function InversionScore($str){
        
