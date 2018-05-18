@@ -18,6 +18,8 @@ $t = new equipeControlleur($db);
 $eq = $t->getNomUneEquipe($_GET['id']);
 $te = $t->getJoueurs($_GET['id']);
 $aj = $t->getAutresJoueurs($_GET['id']);
+
+$ea = $t->update($_GET['id']);
 ?>
 
 <div class ="col-sm-9">
@@ -88,10 +90,10 @@ $aj = $t->getAutresJoueurs($_GET['id']);
                                 <td><?php echo strtoupper($adhe->getNom()); ?></td>
                                 <td><?php echo $adhe->getPrenom(); ?></td>
                                 <td><?php echo $adhe->getNo_licence(); ?></td>
-                                <td > <button id="ajoutJoueur<?php echo $adhe->getId_adherent(); ?>" class="btn btn-primary" role="button" onclick="ajoutJoueur(<?php echo $adhe->getId_adherent(); ?>)" style="visibility: visible;">
+                                <td > <button id="ajoutJoueur<?php echo $adhe->getId_adherent(); ?>" class="btn btn-primary" role="button" onclick="ajoutJoueur(<?php echo $adhe->getId_adherent(); ?>)" style="display: block;">
                                         Ajouter
                                     </button>
-                                    <button class="btn btn-info" onclick="annulJoueur(<?php echo $adhe->getId_adherent(); ?>)" role="button" id="annulJoueur<?php echo $adhe->getId_adherent(); ?>" style="visibility: hidden;" >
+                                    <button class="btn btn-info" onclick="annulJoueur(<?php echo $adhe->getId_adherent(); ?>)" role="button" id="annulJoueur<?php echo $adhe->getId_adherent(); ?>" style="display: none;" >
                                         Annuler
                                     </button></td>
                             </tr>
@@ -100,7 +102,12 @@ $aj = $t->getAutresJoueurs($_GET['id']);
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="valider()">Fermer</button>
+                <form method="POST" action="<?php echo 'listingJoueur.php?id=' . $_GET['id']; ?>">
+                    <input type="text" onchange="identifiantAuto()"  class="form-control" id="tabJoueur" name="tabJoueur" >
+                    <button type="submit" class="btn btn-primary" >
+                        Joueurs
+                    </button>
+                </form>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
             </div>
         </div>
@@ -109,7 +116,7 @@ $aj = $t->getAutresJoueurs($_GET['id']);
 <script>
 //    function testJoueur($id) {
 //        var tod = document.createElement("td")
-//        console.log(tod)
+//        conso.le.log(tod)
 //        var boutton = document.createElement("button")
 //        boutton.className = "btn btn-info"
 //        boutton.setAttribute("role", "button")
@@ -123,17 +130,21 @@ $aj = $t->getAutresJoueurs($_GET['id']);
     var tabJoueur = []
     function ajoutJoueur($id) {
         tabJoueur.push($id)
+        var liste = tabJoueur.toString()
         sessionStorage.setItem("tabJoueur", tabJoueur)
-        document.getElementById("ajoutJoueur" + $id).style.visibility = 'hidden';
-        document.getElementById("annulJoueur" + $id).style.visibility = 'visible';
+        document.querySelector('#tabJoueur').value = liste
+        document.getElementById("ajoutJoueur" + $id).style.display = 'none';
+        document.getElementById("annulJoueur" + $id).style.display = 'block';
     }
 
     function annulJoueur($id) {
         for (var i = 0; i < tabJoueur.length; i++) {
             if (tabJoueur[i] === $id) {
                 delete tabJoueur[i]
-                document.getElementById("ajoutJoueur" + $id).style.visibility = 'visible';
-                document.getElementById("annulJoueur" + $id).style.visibility = 'hidden';
+                var liste = tabJoueur.toString()
+                document.querySelector('#tabJoueur').value = liste
+                document.getElementById("ajoutJoueur" + $id).style.display = 'block';
+                document.getElementById("annulJoueur" + $id).style.display = 'none';
             }
         }
     }
@@ -141,4 +152,5 @@ $aj = $t->getAutresJoueurs($_GET['id']);
     function valider() {
         console.log(sessionStorage.getItem("tabJoueur"))
     }
+
 </script>
