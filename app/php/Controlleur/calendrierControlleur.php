@@ -34,7 +34,67 @@ class calendrierControlleur {
       
         return $string;
     }
-
+    function getColor($id){
+        
+         switch ($id){
+        case "1" :
+            $color='red';
+            break;
+        case "2" :
+            $color='blue';
+            break;
+        case "3" :
+            $color='grey';
+            break;
+        case "4" :
+            $color='white';
+            break;
+        case "5" :
+            $color='orange';
+            break;
+        case "6" :
+            $color='cyan';
+            break;
+        case "7" :
+            $color='pink';
+            break;
+        case "8" :
+            $color='purple';
+            break;
+        case "9" :
+            $color='yellow';
+            break;
+        case "10" :
+            $color='green';
+            break;
+        case "11" :
+            $color='brown';
+            break;
+        case "12" :
+            $color='beige';
+            break;
+        case "13" :
+            $color='navyBlue';
+            break;
+        case "14" :
+            $color='sylver';
+            break;
+        case "15" :
+            $color='golden';
+            break;
+        case "16" :
+            $color='turquoise';
+            break;
+        case "17" :
+            $color='mauve';
+            break;
+        default :
+            $color='ffdead';
+        }
+        //case 
+        return $color;
+        
+    }
 
     function getAll() {
         //     $qry = $this->db->prepare("SELECT * FROM categories;");
@@ -51,7 +111,8 @@ class calendrierControlleur {
 
     function getMatch() {
         $sql = ' select id_creneau,debut, fin, salles.nom as "salle",'
-                . ' eq.nom as "equipe", '
+                . ' eq.nom as "equipe", id_equipe,'
+                
                 . 'nom_equipe_b as "adversaire" '
                 . 'from creneaux join salles using(id_salle) '
                 . 'join matchs ma using(id_creneau) '
@@ -61,7 +122,8 @@ class calendrierControlleur {
           id: " . $row['id_creneau'] . ",
           title: '" . $row['equipe'] . " vs " . $this->apostropheSession($row['adversaire']) . " (" . $row['salle'] . ")',
           start: '" . $row['debut'] . "',
-          end:'" . $row['fin'] . "'
+          end:'" . $row['fin'] . "',
+          color:'".$this->getColor($row['id_equipe'])."'
         },";
         };
     }
