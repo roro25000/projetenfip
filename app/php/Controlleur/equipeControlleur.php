@@ -53,6 +53,7 @@ class equipeControlleur {
             $str = preg_replace("/,{2,}/", ",", $string);
             $str = preg_replace("/(^,|,$)/", "", $str);
             foreach (explode(",", $str) as $elements) {
+                
                 $qry = $this->db->prepare('Select * FROM joue WHERE id_adherent=' . $elements . ' AND id_equipe=' . $idEquipe . ';');
                 $qry->execute();
                 $compteur = 0;
@@ -70,8 +71,12 @@ class equipeControlleur {
         }
     }
 
-    public function delete() {
-        
+    public function delete($idEquipe) {
+        if (isset($_POST['suppr'])) {
+            $qry = $this->db->prepare('DELETE FROM joue WHERE id_adherent=' . $_POST['suppr'] . ' AND id_equipe=' . $idEquipe . ';');
+            $qry->execute();
+            header("Refresh:0");
+        }
     }
 
     public function getOne($id) {

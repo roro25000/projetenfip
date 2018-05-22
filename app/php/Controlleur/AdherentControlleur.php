@@ -74,7 +74,52 @@ class AdherentControlleur {
     }
 
     public function delete() {
-        
+       if (isset($_POST['suppr'])) {
+            $qry = $this->db->prepare('Select * FROM joue WHERE id_adherent=' . $_POST['suppr']. ';');
+            $qry->execute();
+            $c1 = 0;
+            while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)) {
+                if($c1=0){
+                   $qry2 = $this->db->prepare('DELETE FROM joue WHERE id_adherent=' . $_POST['suppr'].';');
+                   $qry2->execute(); 
+                   $c1++;
+                }
+            } 
+            
+            $qry = $this->db->prepare('Select * FROM arbitre WHERE id_adherent=' . $_POST['suppr']. ';');
+            $qry->execute();
+            $c2 = 0;
+            while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)) {
+                if($c2=0){
+                  $qry2 = $this->db->prepare('delete from arbitre where id_adherent=' . $_POST['suppr'].';');
+                  $qry2->execute();
+                   $c2++;
+                }
+            } 
+            
+            $qry = $this->db->prepare('Select * FROM entraine WHERE id_entraineur=' . $_POST['suppr']. ';');
+            $qry->execute();
+            $c3 = 0;
+            while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)) {
+                if($c3=0){
+                  $qry2 = $this->db->prepare('delete from entraine where id_entraineur='. $_POST['suppr'].';');
+                  $qry2->execute();
+                  $c3++;
+                }
+            }
+            
+            $qry = $this->db->prepare('Select * FROM adherents WHERE id_adherent=' . $_POST['suppr']. ';');
+            $qry->execute();
+            $c4 = 0;
+            while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)) {
+                if($c4=0){
+                  $qry2 = $this->db->prepare('delete from adherents where id_adherent='. $_POST['suppr'].';');
+                  $qry2->execute();
+                  $c4++;
+                }
+            }
+            header("Refresh:0");
+        } 
     }
 
     public function getAll(){
