@@ -179,6 +179,10 @@ fixed-top
 {
     margin-bottom:1rem;
 }
+.btn-success
+{
+    margin-left:-17rem;
+}
 label
 {
     margin-right:5.8rem;
@@ -187,10 +191,15 @@ label2
 {
     margin-left:-16rem;
 }
+label3
+{
+    margin-left:-4rem;
+}
 .form-control
 {
     margin-top:1rem;
 }
+
 .card-img-top
 {
     width:12rem;
@@ -328,6 +337,11 @@ li
 {
     background-color:#FFFFFF;
 }
+
+google
+{
+    margin-top:5rem;
+}
 @media (min-width:992px)
 {
     .about-heading .about-heading-img
@@ -415,7 +429,7 @@ li
 {
     background-color:#red;
     border-color:#e6a756;
-    margin-top:0rem;
+    margin-top:2rem;
 }
 .btn-primary:active,.btn-primary:focus,.btn-primary:hover
 {
