@@ -52,9 +52,8 @@ class equipeControlleur {
             $string = $_POST['tabJoueur'];
             $str = preg_replace("/,{2,}/", ",", $string);
             $str = preg_replace("/(^,|,$)/", "", $str);
-            echo "list--" . $str;
             foreach (explode(",", $str) as $elements) {
-                $qry = $this->db->prepare('Select * FROM joue WHERE id_adherent=' . $elements . ' AND id_equipe='.$idEquipe.';');
+                $qry = $this->db->prepare('Select * FROM joue WHERE id_adherent=' . $elements . ' AND id_equipe=' . $idEquipe . ';');
                 $qry->execute();
                 $compteur = 0;
                 while ($donnees = $qry->fetch(PDO::FETCH_ASSOC)) {
@@ -62,11 +61,12 @@ class equipeControlleur {
                     $joue = new \Model\Joue($donnees);
                 }
                 if ($compteur == 0) {
-                    $req2 = $this->db->prepare('insert into joue (id_adherent,id_equipe) values ('.$elements.','.$idEquipe.');');
+                    $req2 = $this->db->prepare('insert into joue (id_adherent,id_equipe) values (' . $elements . ',' . $idEquipe . ');');
                     $req2->execute();
                 }
             }
-            header('Location: mapage.php?mavar='.$idEquipe);
+
+            header("Refresh:0");
         }
     }
 

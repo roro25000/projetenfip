@@ -40,13 +40,13 @@ $pst = $p->getAll();
                     </div> 
                 </div>
                 <div class="form-group row justify-content-between" >
-                    <div class="col-sm-3"><label for="prenom">Prenom</label></div>
+                    <div class="col-sm-3"><label for="prenom">Prénom</label></div>
                     <div class="col-sm-7 ">
                         <input type="text" onchange="identifiantAuto()"  class="form-control" id="prenom" name="prenom" placeholder="Entrer un prenom">
                     </div> 
                 </div>
                 <div class="form-group row justify-content-between" >
-                    <div class="col-sm-3"><label for="email">email</label></div>
+                    <div class="col-sm-3"><label for="email">Email</label></div>
                     <div class="col-sm-7 ">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Entrer un email">
                     </div> 
@@ -60,7 +60,7 @@ $pst = $p->getAll();
                 </div>
 
                 <div class="form-group row justify-content-between">
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <label for="motdepasse">Mot de passe</label>
                     </div>
                     <div class="col-sm-7 ">
@@ -68,7 +68,7 @@ $pst = $p->getAll();
                     </div> 
                 </div>
                 <div class="form-group row justify-content-between">
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <label for="Confmotdepasse">Confirmation du mot de passe</label>
                     </div>
                     <div class="col-sm-7 ">
@@ -142,7 +142,7 @@ $pst = $p->getAll();
                     </div>
                     <div class="col-sm-7 ">
                         <div class="dropdown">
-                            <button class="btn btn-info dropdown-toggle btn-block" type="button" id="DDhabilitation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-info3 dropdown-toggle btn-block" type="button" id="DDhabilitation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Habilitation
                             </button>
                             <div class="dropdown-menu">
@@ -198,7 +198,7 @@ $pst = $p->getAll();
             </div>
                 </div>
             <div class="card-footer text-muted">
-                <button type="submit" class="btn btn-primary btn-block" id="creationAdherent">Creer</button>
+                <button type="submit" class="btn btn-primary btn-block" id="creationAdherent">Créer</button>
             </div>
                 
         </form>

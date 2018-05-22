@@ -132,7 +132,7 @@ fixed-top
 .card2
 {
     font-family:Lora;
-    height:56rem;
+    height:65rem;
     background-color:#FFFFFF;
     border-radius:.5rem;
     content:'';
@@ -148,7 +148,36 @@ fixed-top
 }
 .btn
 {
-    margin-top:2rem;
+    margin-top:auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.btn-info
+{
+    
+    width:25rem;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2rem;
+    margin-top:1rem;
+}
+.btn-info2
+{
+    background-color:#6c757d;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2rem;
+    margin-top:1rem;
+}
+.btn-info3
+{
+    background-color:#1E90FF;
+    color:#FFFFFF;
+  
+}
+.btn-secondary
+{
+    margin-bottom:1rem;
 }
 label
 {
@@ -180,6 +209,13 @@ li
 {
     padding-left:1.3rem;
 }
+
+.modal-content
+{
+    width:40rem;
+}
+
+
 @media (min-width:992px)
 {
     .intro .intro-img
