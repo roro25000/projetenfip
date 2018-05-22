@@ -24,7 +24,7 @@ require "entete.php";
             <p class="mb-3">Créée en 1987, le club se classe dans les 5 premiers Clubs de Volley-Ball de la région, avec un effectif actuel supérieur à 100 joueurs. Il engage des équipes compétitions filles et garçons à partir de 5 ans, dans quasiment toutes les catégories, ainsi que des équipes loisirs. Pour la saison 2017-2018, la section à obtenu le label de club formateur Futur de la FFBV.
             </p>
             <div class="intro-button mx-auto">
-              <a class="btn btn-primary btn-xl" href="#">Rejoignez-nous !</a>
+                <a class="btn btn-primary btn-xl" href="Inscription.php">Rejoignez-nous !</a>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ require "entete.php";
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <div class="cta-inner text-center rounded">
+            <div class="cta-inner2 text-center rounded">
               <h2 class="section-heading mb-4">
                 <span class="section-heading-lower">Information et recrutement</span>
               </h2>

@@ -20,9 +20,9 @@ $te = $t->getAll();
     <div class="container">
         <div class="row">
             <div class="col-xl-12 mx-auto">
-                <div class="cta-inner text-center rounded">
+                <div class="cta-inner2 text-center rounded">
                     <br />
-                    <table class="table table-hover">
+                    <table class="datatable table  table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>

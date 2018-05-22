@@ -72,7 +72,7 @@ p
 #mainNav .navbar-nav .nav-item .nav-link
 {
     color:rgba(255,255,255,.7);
-    font-weight:800
+    font-weight:800;
 }
 #mainNav .navbar-nav .nav-item.active .nav-link
 {
@@ -146,6 +146,14 @@ fixed-top
 {
     margin-top:0.2rem;
 }
+.btn
+{
+    margin-top:2rem;
+}
+label
+{
+    margin-right:5.8rem;
+}
 .card-img-top
 {
     width:12rem;
@@ -159,6 +167,14 @@ fixed-top
     right:-.5rem;
     border:.25rem solid #FFFFFF
         
+}
+p 
+{
+    text-align:justify;
+}
+li
+{
+    text-align:justify;
 }
 .col-sm-3
 {
@@ -186,8 +202,8 @@ fixed-top
 {.intro .intro-text{width:45%}}
 .cta
 {
-    padding-top:5rem;
-    padding-bottom:5rem;
+    padding-top:2rem;
+    padding-bottom:2rem;
     background-color:rgba(230,167,86,.9);
 }
 
@@ -195,14 +211,33 @@ fixed-top
 .cta .cta-inner
 {
     position:relative;
-    padding:3rem;
-    margin:.5rem;
+    padding:1.1rem;
+    margin:.4rem;
     background-color:#FFFFFF
 }
 .cta .cta-inner:before
 {
     border-radius:.5rem;
-    border-collapse:separate;
+    position:absolute;                  
+    top:-.5rem;
+    bottom:-.5rem;
+    left:-.5rem;
+    right:-.5rem;
+    border:.25rem solid #FFFFFF;
+
+
+}
+.cta .cta-inner2
+{
+    position:relative;
+    padding:1.1rem;
+    margin:.4rem;
+    background-color:#FFFFFF
+}
+.cta .cta-inner2:before
+{
+    border-radius:.5rem;
+    content:'';
     position:absolute;                  
     top:-.5rem;
     bottom:-.5rem;
@@ -312,6 +347,12 @@ fixed-top
     background-color:#e6a756;
     border-color:#e6a756
 }
+.btn-danger
+{
+    background-color:#red;
+    border-color:#e6a756;
+    margin-top:2rem;
+}
 .btn-primary:active,.btn-primary:focus,.btn-primary:hover
 {
     background-color:#df902a;
@@ -322,3 +363,7 @@ fixed-top
 {
     font-weight:100!important
 }
+
+
+
+

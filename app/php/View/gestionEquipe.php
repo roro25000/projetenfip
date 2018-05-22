@@ -21,7 +21,7 @@ $te = $t->getAll();
             <div class="col-xl-12 mx-auto">
                 <div class="cta-inner text-center rounded">
                     <br />
-                    <table class="table table-hover">
+                    <table class="datatable table  table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>

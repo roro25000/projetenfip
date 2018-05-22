@@ -20,9 +20,9 @@ $te = $t->getAll();
     <div class="container">
         <div class="row">
             <div class="col-xl-12 mx-auto">
-                <div class="cta-inner text-center rounded">
+                <div class="cta-inner2 text-center rounded">
                     <br />
-                    <table class="table table-hover">
+                    <table class="datatable table  table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -43,22 +43,22 @@ $te = $t->getAll();
                                     <td><?php echo $adhe->getNo_licence(); ?></td>
                                 </tr>
                             <?php }; ?>
-                                
+
                         </tbody>
                     </table>
 
                 </div>
             </div>
             <br>
-<div class="col-xl-4 mx-auto">
+            <br>    
+            <div class="col-xl-3 mx-auto">
 
-        <a class="btn btn-danger btn-lg btn-block" href="ajoutAdherent.php" role="button">Ajout d'un joueur</a>
+                <a class="btn btn-danger btn-lg btn-block" href="ajoutAdherent.php" role="button">Ajout d'un joueur</a>
 
-</div>
+            </div>
         </div>
     </div>
 </div>
 </section>
-
 
 <?php require "piedPage.php"; ?>
