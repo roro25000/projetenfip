@@ -166,8 +166,8 @@ fixed-top
     background-color:#6c757d;
     margin-left:auto;
     margin-right:auto;
-    margin-bottom:2rem;
-    margin-top:1rem;
+    margin-bottom:0rem;
+    margin-top:0rem;
 }
 .btn-info3
 {
@@ -182,6 +182,14 @@ fixed-top
 label
 {
     margin-right:5.8rem;
+}
+label2
+{
+    margin-left:-16rem;
+}
+.form-control
+{
+    margin-top:1rem;
 }
 .card-img-top
 {
@@ -240,7 +248,7 @@ li
 {
     padding-top:2rem;
     padding-bottom:2rem;
-    background-color:rgba(230,167,86,.9);
+    background-color:#B22222;
 }
 
 
@@ -274,6 +282,26 @@ li
 {
     border-radius:.5rem;
     content:'';
+    position:absolute;                  
+    top:-.5rem;
+    bottom:-.5rem;
+    left:-.5rem;
+    right:-.5rem;
+    border:.25rem solid #FFFFFF;
+
+
+}
+
+.cta .cta-inner3
+{
+    position:relative;
+    padding:1.1rem;
+    margin:.4rem;
+    background-color:#FFFFFF;
+}
+.cta .cta-inner3:before
+{
+    border-radius:.5rem;
     position:absolute;                  
     top:-.5rem;
     bottom:-.5rem;

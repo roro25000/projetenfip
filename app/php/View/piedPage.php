@@ -2,31 +2,31 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block"  src="../../../public/img/partenaires/la-part-de-reve.jpg" alt="First slide">
+            <a href="http://lapartdereve.fr"><img class="d-block"  src="../../../public/img/partenaires/la-part-de-reve.jpg" alt="1 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block " src="../../../public/img/partenaires/l-air-du-temps.jpg" alt="Second slide">
+            <a href="http://air-du-temps.fr/"><img class="d-block " src="../../../public/img/partenaires/l-air-du-temps.jpg" alt="2 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/Vue_de_reve.png" alt="Third slide">
+            <a href="http://vuedereve.fr/"><img class="d-block" src="../../../public/img/partenaires/Vue_de_reve.png" alt="3 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/l-abattoir.jpg" alt="4 slide">
+            <img class="d-block"  src="../../../public/img/partenaires/l-abattoir.jpg"  alt="4 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/pouria-ardalan.jpg" alt="5 slide">
+            <a href="http://www.thirdedge.fr/"><img class="d-block" src="../../../public/img/partenaires/pouria-ardalan.jpg" alt="5 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/rei.jpg" alt="sixth slide">
+            <a href="http://www.societe-rei.fr/"><img class="d-block" src="../../../public/img/partenaires/rei.jpg" alt="sixth slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/ifca.png" alt="7 slide">
+           <a href="http://ifca31.fr/"> <img class="d-block" src="../../../public/img/partenaires/ifca.png" alt="7 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/afsom.jpg" alt="8 slide">
+            <a href="https://www.fonsorbes.fr/annuaires-professionnels/afsom/"><img class="d-block" src="../../../public/img/partenaires/afsom.jpg" alt="8 slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block" src="../../../public/img/partenaires/eritec.png" alt="9 slide">
+            <a href="http://www.eritec.eu/"><img class="d-block" src="../../../public/img/partenaires/eritec.png" alt="9 slide">
         </div>
     </div>
 

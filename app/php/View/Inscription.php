@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <div class="cta-inner text-center rounded">
+                <div class="cta-inner3 text-center rounded">
 
                     <h1>Documents 2017-2018</h1>
                     <p>Ci-dessous, vous trouverez tous les documents nécessaires à votre inscription au SCP Volley-Ball de Plaisance pour la saison 2017-2018.</p>

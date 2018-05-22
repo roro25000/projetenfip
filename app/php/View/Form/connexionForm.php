@@ -7,12 +7,12 @@
         <div class="card-body">
             <p class="card-text">
             <form method="POST" action="espaceadherent.php">
-                <div class="form-group col-sm-9">
-                    <label for="identifiant">Identifiant</label>
+                <div class="form-group col-sm-10">
+                    <label2 for="identifiant">Identifiant</label2>
                     <input type="text" class="form-control" id="identifiant" name="identifiant" aria-describedby="identifiantAide" placeholder="Entrer votre identifiant">
-                </div>
-                <div class="form-group col-sm-9">
-                    <label for="motdepasse">Mot de passe</label>
+                    </div><br>
+                <div class="form-group col-sm-10">
+                    <label2 for="motdepasse"> Mot de passe</label2>
                     <input type="password" class="form-control" id="motdepasse" name="motdepasse" placeholder="Entrer votre mot de passe">
                 </div>
                 <!--                    <div class="form-check">
