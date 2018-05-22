@@ -103,7 +103,7 @@ $ea = $t->update($_GET['id']);
             </div>
             <div class="modal-footer">
                 <form method="POST" action="<?php echo 'listingJoueur.php?id=' . $_GET['id']; ?>">
-                    <input type="text" onchange="identifiantAuto()"  class="form-control" id="tabJoueur" name="tabJoueur" >
+                    <input type="text" onchange="identifiantAuto()"  class="form-control" id="tabJoueur" name="tabJoueur" hidden>
                     <button type="submit" class="btn btn-primary" >
                         Joueurs
                     </button>

@@ -42,30 +42,33 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
-                    
+
 
                     <?php
                     if (isset($_SESSION['identifiant'])) {
                         ?>    
+                        <li class="nav-item">
+                            <a class="nav-link" href="gestionAdherent.php">Administration</a>
+                        </li>
 
-                        </ul><ul class="nav navbar-nav navbar-right">
-                              <li>
+                    </ul><ul class="nav navbar-nav navbar-right">
+                        <li>
                             <form id="deconnexionForm" action="espaceadherent.php" method="POST">
                                 <input type="hidden" value="deconnexion" name="deconnexion">
                                 <a class="nav-link" href="javascript:{}" onclick="document.getElementById('deconnexionForm').submit();" role="button" aria-haspopup="true" aria-expanded="false" ><span class="ion-person active"></span> Deconnexion</a>
                             </form>
                         </li>
-                          </ul>
-                        <?php
-                    } else {
-                        echo '</ul><ul class="nav navbar-nav navbar-right">
+                    </ul>
+                    <?php
+                } else {
+                    echo '</ul><ul class="nav navbar-nav navbar-right">
                               <li>
                                 <a class="nav-link" href="espaceadherent.php" role="button" aria-haspopup="true" aria-expanded="false"><span class="ion-person active" data-pack="default" data-tags="users, staff, head, human"></span> Connexion</a>
                                 
                               </li>
                           </ul>';
-                    }
-                    ?>
+                }
+                ?>
 
 
             </div>
