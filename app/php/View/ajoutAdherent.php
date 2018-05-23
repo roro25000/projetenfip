@@ -34,26 +34,26 @@ $pst = $p->getAll();
         <form method="POST" action="ajoutAdherent.php">
             <div class="card-body">
                 <div class="form-group row justify-content-between" >
-                    <div class="col-sm-3"><label for="nom">Nom</label></div>
+                    <div class="col-sm-3"><label for="nom">Nom :</label></div>
                     <div class="col-sm-7 ">
                         <input type="text" onchange="identifiantAuto()"  class="form-control" id="nom" name="nom" placeholder="Entrer un nom">
                     </div> 
                 </div>
                 <div class="form-group row justify-content-between" >
-                    <div class="col-sm-3"><label for="prenom">Prénom</label></div>
+                    <div class="col-sm-3"><label for="prenom">Prénom :</label></div>
                     <div class="col-sm-7 ">
                         <input type="text" onchange="identifiantAuto()"  class="form-control" id="prenom" name="prenom" placeholder="Entrer un prenom">
                     </div> 
                 </div>
                 <div class="form-group row justify-content-between" >
-                    <div class="col-sm-3"><label for="email">Email</label></div>
+                    <div class="col-sm-3"><label for="email">Email :</label></div>
                     <div class="col-sm-7 ">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Entrer un email">
                     </div> 
                 </div>
 
                 <div class="form-group row justify-content-between" >
-                    <div class="col-sm-3"><label for="identifiant">Identifiant</label></div>
+                    <div class="col-sm-3"><label for="identifiant">Identifiant :</label></div>
                     <div class="col-sm-7 ">
                         <input type="text" class="form-control" id="identifiant" name="identifiant" aria-describedby="identifiantAide" placeholder="nom.prenom">
                     </div> 
@@ -61,7 +61,7 @@ $pst = $p->getAll();
 
                 <div class="form-group row justify-content-between">
                     <div class="col-sm-5">
-                        <label for="motdepasse">Mot de passe</label>
+                        <label for="motdepasse">Mot de passe :</label>
                     </div>
                     <div class="col-sm-7 ">
                         <input type="password" onchange="checkMDP()" class="form-control" id="motdepasse" name="motdepasse" placeholder="Entrer votre mot de passe">
@@ -69,7 +69,7 @@ $pst = $p->getAll();
                 </div>
                 <div class="form-group row justify-content-between">
                     <div class="col-sm-5">
-                        <label for="Confmotdepasse">Confirmation du mot de passe</label>
+                        <label for="Confmotdepasse">Confirmation Mdp :</label>
                     </div>
                     <div class="col-sm-7 ">
                         <input type="password" onchange="checkMDP()" class="form-control" id="confmotdepasse" name="confmotdepasse" placeholder="Confirmer votre mot de passe">
@@ -77,12 +77,12 @@ $pst = $p->getAll();
                 </div>
                 <div class="form-group row justify-content-between">
                     <div class="col-sm-3">
-                        <label for="categorie">Categorie</label>
+                        <label for="categorie">Categorie :</label>
                     </div>
                     <div class="col-sm-7 ">
                         <div class="dropdown">
                             <button class="btn btn-success btn-block dropdown-toggle" type="button" id="DDcategorie" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Categorie
+                                Categorie 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <?php
@@ -103,7 +103,7 @@ $pst = $p->getAll();
                 </div>
                 <div class="form-group row justify-content-between">
                     <div class="col-sm-3">
-                        <label for="poste">Poste</label>
+                        <label for="poste">Poste :</label>
                     </div>
                     <div class="col-sm-7 ">
                         <div class="dropdown">
@@ -129,7 +129,7 @@ $pst = $p->getAll();
 
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="surclassement">Surclassement</label>
+                        <label for="surclassement">Surclassement :</label>
                     </div>
                     <div class="col-sm-5 ">
                         <input name='surclassement' type="checkbox" class="form-control" id="surclassement" value="ok">
@@ -138,7 +138,7 @@ $pst = $p->getAll();
 
                 <div class="form-group row justify-content-between">
                     <div class="col-sm-3">
-                        <label for="poste">Habilitation</label>
+                        <label for="poste">Habilitation :</label>
                     </div>
                     <div class="col-sm-7 ">
                         <div class="dropdown">
@@ -170,7 +170,7 @@ $pst = $p->getAll();
                 </div>
                 <div class="form-group row justify-content-between">
                     <div class="col-sm-3">
-                        <label for="genre">Genre</label>
+                        <label for="genre">Genre :</label>
                     </div>
                     <div class="col-sm-7">
                         <select class="form-control" id="Genre" name="genre">

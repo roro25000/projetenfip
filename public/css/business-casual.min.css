@@ -132,7 +132,7 @@ fixed-top
 .card2
 {
     font-family:Lora;
-    height:67rem;
+    height:60rem;
     background-color:#FFFFFF;
     border-radius:.5rem;
     content:'';
@@ -179,13 +179,10 @@ fixed-top
 {
     margin-bottom:1rem;
 }
-.btn-success
-{
-    margin-left:-17rem;
-}
+
 label
 {
-    margin-right:5.8rem;
+    margin-right:-0.3rem;
 }
 label2
 {
@@ -193,11 +190,32 @@ label2
 }
 label3
 {
-    margin-left:-4rem;
+    margin-left:-8rem;
 }
+label4
+{
+    margin-left:-24rem;
+}
+label5
+{
+    margin-left:-8.5rem;
+}
+label6
+{
+    margin-left:-10rem;
+}
+label7
+{
+    margin-left:-9.5rem;
+}
+label8
+{
+    margin-left:-0.3rem;
+}
+
 .form-control
 {
-    margin-top:1rem;
+    margin-top:0rem;
 }
 
 .card-img-top
@@ -338,9 +356,9 @@ li
     background-color:#FFFFFF;
 }
 
-google
+.google
 {
-    margin-top:5rem;
+    margin-top:1.5rem;
 }
 @media (min-width:992px)
 {
@@ -429,7 +447,7 @@ google
 {
     background-color:#red;
     border-color:#e6a756;
-    margin-top:2rem;
+    margin-top:-0rem;
 }
 .btn-primary:active,.btn-primary:focus,.btn-primary:hover
 {
